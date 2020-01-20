@@ -209,3 +209,125 @@ function myFn(a) {
  * STATEMENT
  * EXPRESSION STATEMENT
  */
+
+// MORE EXERCISES
+
+// Exercise ONE
+/**sumOfNumbers. Create a program that adds up the numbers in an array (of at least 3 numbers).
+  Bonus: Print to screen both the sum and the product of these numbers. */
+
+let array = [1, 2, 3, 4, 5];
+
+// Getting sum of numbers
+let sum = array.reduce(function(a, b) {
+  return a + b;
+}, 0);
+
+console.log(sum); // Prints: 15
+
+// Second way using for -loop
+
+let arr = [1, 2, 3, 4, 5];
+
+let sume = 0;
+
+for (let num of arr) {
+  sume = sum + num;
+}
+
+console.log(sume); // 15
+
+// solution 3
+let intArr = [2, 4, 5, 7];
+let result = 0;
+let product = 1;
+for (let i = 0; i < intArr.length; i++) {
+  result += intArr[i];
+  product *= intArr[i];
+}
+console.log(
+  `The sum for your Array is ${result}, The product for our Array is ${product}`
+);
+
+// EXERCISE TWO
+
+/**
+ *Hello Frien Create an array filled with your friends’ and family’s names.
+  Loop over the array and greet each friend e.g. Hello Maria! Hello Mike! etc.
+  Bonus: Print the indexes of each item in the array.
+  Expected output example: Mike is at index 1 of my friends array.
+ *
+ */
+
+let arrayFriends = ["Maria", "Mike", "Miguel", "Anna"];
+//let arrayLength = arrayFriends.length; // I don't need to repeat myself
+for (let i = 0; i < arrayFriends.length; i++) {
+  console.log(`Hello ${arrayFriends[i]}`);
+}
+
+// SECOND SOLUTION
+
+const names2 = ["Irie", "Mike", "Tom", "Anna"];
+// nested loop
+//for (let i = 0; i <= names2.length -1; i++) Why we have = and -1?
+for (let i = 0; i < names2.length; i++) {
+  console.log(`Hallo ${names2[i]}, and he is index ${i} of Names Array`);
+}
+//
+/**let myDate = new Date();
+let hrs = myDate.getHours();
+
+let greet;
+
+if (hrs < 12) greet = "Good Morning";
+else if (hrs >= 12 && hrs <= 17) greet = "Good Afternoon";
+else if (hrs >= 17 && hrs <= 24) greet = "Good Evening"; */
+
+// EXERCISE 3
+//City Names. Create an array of city names. Loop through the array and add the city names to a string.
+//
+//Example of expected output: “Berlin, Paris, Prague, Rome”.
+let cities = ["Berlin", "Paris", "Prague"];
+let anotherCity = cities.push("Rome");
+console.log(cities.length);
+// 4
+
+// SOLUTION 2
+
+const cityNames = ["Berlin", "Madrid", "Amsterdam", "Vienna"];
+let cityNamesStr = "";
+for (let i = 0; i < cityNames.length; i++) {
+  cityNamesStr += cityNames[i];
+  if (i == cityNames.length - 1) {
+    // we use -1 because javascript starts from 0
+    cityNamesStr += ".";
+  } else {
+    cityNamesStr += ",";
+  }
+}
+console.log(cityNamesStr);
+// EXERCISE 4
+
+/**
+ * Odds and Evens. Create a program that changes a given array by adding 1 to each odd integer
+ * and subtracting 1 from each even integer.
+ *  Examples:[3, 5, 2, 4] ➞ expected output: [4, 6, 1, 3]
+ */
+let nums = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
+let evens = [];
+let odds = [];
+
+let evenNumbers = function(nums) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 != 1) {
+      evens.push(nums[i]);
+      console.log(evens);
+    } else {
+      odds.push(nums[i]);
+      console.log(odds);
+    }
+  }
+};
+
+//alert(evens);
+//alert(odds);
