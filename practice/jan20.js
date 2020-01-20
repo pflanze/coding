@@ -133,6 +133,79 @@ console.log(asianCities);
 let newArray = asianCities.splice(1, 3);
 console.log(asianCities);
 // Array.join
-const arrayString = ["This", "is", "array", "was", "a", "string"];
+const arrayString = ["This", "is", "array", "with", "a", "string"]; // array holds strings as values
 let stringToArr = arrayString.join(" "); // with empty space able to read better
 console.log(stringToArr);
+
+/**  Array is a special object with numeric property names like 0,1,2,3,4 and its behavior is the same as
+ * any other object.
+ */
+// Array Literal Notation
+
+const myArray = [1, 2, 3]; // array which holds 3 values, numbers
+console.log(myArray);
+
+/**
+ *! Array can hold values of any type: OBJECTS, NUMBERS, STRINGS, BOOLEANS etc.
+
+ */
+const myArray2 = new Array(1, 2, 3);
+console.log(myArray2); // [1,2,3]
+
+/**
+ * length - indicates quantity of the elements in the array,
+ * the length property is updated automatically each time when we perform actions with array;
+ * and _proto_ points to the prototype of the array methods: push, pop, pull, shift, unshift
+ * push -  add new element at the end of the PropTypes.array,
+ * pop - removes last element of the array
+ * shift - remove first element
+ * unshift - add new element at the beginning of the array
+ *
+ * "length" property holds a number as a value and this number is equal
+ * to the quantities of the elements in the array, and there is one hidden property which points
+ * to the prototype . _proto_
+ *
+ * working with array elements by their indexes is not the most conveniont way to perform any actions
+ * with array. That is why there are array methods, available for every variable that holds array as a value.
+ *
+ */
+
+//const myArray = [1, 2, 3]; // array literal
+
+// Array with OBJECT literal Notation
+const myObject = {
+  0: 1,
+  1: 2,
+  3: 3,
+  length: 3
+};
+
+// statements produces ACTION not Value
+let a; // semi-column is added after statements
+// ; - semi-column is required after several statements
+
+const b = 5;
+// there is no semi-column after expression
+
+/**
+ * How to distinguish expression from statement?
+ * EXPRESSIONS can be used as ARGUMENTS in the function call.
+ * Expressions can be turned into statements and are called EXPRESSION STATEMENTS
+ *
+ * When we should use expression statement instead of expression?
+ * If expression is used standalone - turn it into EXPRESSION STATEMENT by adding "; " at the end
+ *
+ */
+function myFn(a) {
+  console.log(a); // expression statement;
+}
+
+// In JavaScript engine there are two phases COMPILATION and EXECUTION
+
+// VARIABLES LIFECYCLE
+/**
+ * In JS there are
+ * EXPRESSIONS
+ * STATEMENT
+ * EXPRESSION STATEMENT
+ */
