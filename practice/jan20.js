@@ -306,6 +306,7 @@ for (let i = 0; i < cityNames.length; i++) {
   }
 }
 console.log(cityNamesStr);
+
 // EXERCISE 4
 
 /**
@@ -327,7 +328,34 @@ let evenNumbers = function(nums) {
       console.log(odds);
     }
   }
-};
+}; //code snippet crashed my terminal but why ? // Exercise 5 // Capitalize
 
 //alert(evens);
 //alert(odds);
+
+// SECOND SOLUTION
+
+/**let numArr = [1, 2, 3, 4, 5]; // 1,4,0,3,6
+let int;
+for (let i = 0; i < numArr.length; i++) {
+  int = numArr[i];
+  if (int % 2 == 0) {
+    int--; // decreasing a number
+    numArr.push(int);
+  } else {
+    int++;
+    numArr.push(int);
+  }
+}
+*/ const arrNames = [
+  "sara",
+  "irie",
+  "nancy"
+];
+for (let i = 0; i < arrNames.length; i++) {
+  // the current character , using the bracket notation
+
+  arrNames[i][0] = // sara
+    arrNames[i][0].toUpperCase() + arrNames[i].substring(1).toLowerCase();
+}
+console.log(arrNames);
