@@ -253,3 +253,163 @@ console.log(arrBig(numbers));
 console.log(arrBig(numbers2));
 
 // filter is a CALLBACK
+
+// NEW EXERCISE -
+
+function fourArrChar(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    // with this line is looping
+    if (array[i].length == 4) {
+      result.push(array[i]);
+    }
+  }
+  return result;
+}
+
+const names2 = ["Irie", "Mary", "Daniel", "Anna"];
+console.log(fourArrChar(names2));
+
+// every day function to deal with 🚀 🤖 🤣
+// i cannot call a variable which is not declared,
+
+// new function example
+function Ochr(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][0] == "0") {
+      result.push[i];
+    }
+  }
+  return result;
+}
+
+const names3 = ["Irie", "Karina", "Daniel"];
+console.log(fourArrChar(names2));
+console.log(Ochr(names2));
+
+// function
+// global array
+/*const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "November",
+  "December"
+]; */
+// num is parameter
+/*function nameOfThatMonth(num) {
+  let result = "";
+  switch (num) {
+    case 1:
+      result = monthNames[0];
+      break;
+    case 2:
+      result = monthNames[1];
+      break;
+    case 3:
+      result = monthName[2];
+      break;
+    case 4:
+      result = monthName[3];
+      break;
+    case 5:
+      console.log(monthName[4];
+      break;
+    case 5:
+      console.log(monthName[5];
+      break;
+    case 5:
+      console.log(monthName[6];
+
+      break;
+    case 5:
+      console.log(monthName[7];
+      break;
+    case 5:
+      console.log(monthName[8];
+      break;
+    case 5:
+      console.log(monthName[9];
+      break;
+    case 5:
+      result = monthName[10];
+
+      break;
+    case 5:
+      result = monthName[11];
+
+      break;
+    default 5:
+      result = monthName[12];
+  }
+}
+console.log(nameOfThatMonth(100));
+console.log(nameOfThatMonth(2));
+console.log(nameOfThatMonth(22)); */
+
+// function array months
+
+let month = new Array();
+
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+
+for (n = 3; n < 24; n++) {
+  console.log(
+    month[(n - 3) % 12] +
+      "," +
+      month[(n - 2) % 12] +
+      "," +
+      month[(n - 1) % 12] +
+      "," +
+      month[n % 12]
+  );
+}
+
+//Use the % Operator: If you increment n just use n%12,
+
+// NEW SOLUTION
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "November",
+  "December"
+];
+
+function nameOfThatMonthEasyVersion(num) {
+  let result = "";
+  let newNum = num - 1;
+  if (num >= 1 && num <= 12) {
+    result = monthNames[newNum];
+  } else {
+    result = "Sorry it is not a month";
+  }
+  return result;
+}
+console.log(nameOfThatMonthEasyVersion(15));
+// when changing the number it gives the current month / 15 is not a month
