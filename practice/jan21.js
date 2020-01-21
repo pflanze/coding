@@ -471,3 +471,86 @@ function reverseNames(arr) {
 }
 
 // we add semicolon  only after the last method we apply
+
+// REDUCE
+
+/**
+ * Reduce comes with some terminology such as reducer & accumulator.
+ * The accumulator is the value that we end with and
+ * the reducer is what action we will perform in order to get to one value.
+ * remember a reducer will only return one value and one value only hence the name reduce.
+ */
+
+/**
+ * The above will give us 30 (5 + 10 + 15). This works just fine, but we can
+ * do this with reduce instead which will save us from mutating our value variable.
+ * reduce is  used in state management (Redux).
+ */
+
+/*arr.reduce(callback, initialValue);
+const value = 0;
+
+const number = [5, 10, 15];
+
+for (let i = 0; i < number.length; i++) {
+  value += number[i];
+}
+*/
+//
+/* this is our initial value i.e. the starting point*/
+//const initialValue = 0;
+
+/* numbers array */
+//const numbers = [5, 10, 15];
+
+/* reducer method that takes in the accumulator and next item */
+//const reducer = (accumulator, item) => {
+// return accumulator + item;
+//};
+
+/*  give the reduce method our reducer function and my initial value */
+//const total = numbers.reduce(reducer, initialValue);
+
+/**const numArray = [1, 2, [3, 10, [11, 12]], [1, 2, [3, 4]], 5, 6];
+
+function flattenArray(data) {
+  // initial value  is a blank array
+  const initialValue = [];
+
+  // call reduce on our data
+  return data.reduce((total, value) => {
+    // if the value is an array then recursively call reduce
+    // if the value is not an array then just concat our value
+    return total.concat(Array.isArray(value) ? flattenArray(value) : value);
+  }, initialValue);
+}
+
+*/
+
+const euros = [29.76, 41.85, 46.5];
+
+const sumTotal = euros.reduce((total, amount) => total + amount);
+//"total" and "amount" are two parameters (one parameter plays the role of an  acumulator and
+//the other parameter a value )
+sumTotal; // 118.11
+console.log(sumTotal);
+
+/**
+ *accumulator is a box and currentValue running through
+ * reduce method execute a reducer function , it is looking for a function I have to provide
+ * Reduce accepts two parameters, the total and the current amount.
+ * The reduce method cycles through each number in the array much like it would in a for-loop.
+ * When the loop starts the total value is the number on the far left (29.76)
+ * and the current amount is the one next to it (41.85).
+ *
+ * want to add the current amount to the total.
+ * The calculation is repeated for each amount in the array,
+ * but each time the current value changes to the next number in the array, moving right.
+ * When there are no more numbers left in the array the method returns the total value.
+ *
+ *
+ */
+
+//  with reduce we can change the OBJECT STRUCTURE
+// example
+// write a function inside of a variable
