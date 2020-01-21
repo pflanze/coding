@@ -413,3 +413,61 @@ function nameOfThatMonthEasyVersion(num) {
 }
 console.log(nameOfThatMonthEasyVersion(15));
 // when changing the number it gives the current month / 15 is not a month
+
+//create a function that and array and each item from that array array to be reversed
+const myArr = ["one", "two", "three"];
+
+function arr1(numbers) {
+  //console.log("array5:", array5);
+}
+console.log(arr1, arr);
+// expected output: "array:" Array ["one", "two", "three"]
+
+const reversed = myArr.map(item =>
+  item
+    .split("")
+    .reverse()
+    .join("")
+);
+
+console.log("reversed:", reversed);
+// expected output: "reversed:" Array ["three", "two", "one"]
+
+console.log("arr:", arr);
+// expected output: "array1:" Array ["three", "two", "one"]
+
+// Array
+
+/**function reverseNames(arr) {
+  let newArray = [];
+  let strToArr = "";
+  let str = "";
+  let revStr = "";
+  for (let i = 0; i < arr.length; i++) {
+    str = arr[i];
+    strToArr = str.split("");
+    strToArr.reverse();
+    revStr = strToArr.join("");
+    newArray.push(revStr);
+  }
+  return newArray;
+}
+console.log(); */
+
+// PRO WAY
+
+function reverseNames(arr) {
+  let newArray = [];
+  let str = "";
+  let revStr = "";
+  for (let i = 0; i < arr.length; i++) {
+    str = arr[i]
+      .split("") // apply a method
+      .reverse()
+      .join("");
+    newArray.push(revStr);
+  }
+  return newArray;
+}
+
+// we add semicolon  only after the last method we apply
