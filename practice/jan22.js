@@ -298,6 +298,7 @@ const amp = num => {
 console.log(amp(24));
 
 // SOLUTION 
+// arr is variable
 function unique(arr) {
   let currentValue = 0;
   let current = []; // 3
@@ -318,5 +319,18 @@ function unique(arr) {
     }
   }
 }
-let arr
-console.log(unique(arr));
+// numArray is parameter 
+let numArray = [1, 1, 2, 1, 3, 1];
+console.log(unique(numArray));
+
+
+console.log(++p);
+
+
+// ++ and the variable 
+var p = 0;
+++p;
+let c = p;
+console.log(c);
+
+// variables in functions
