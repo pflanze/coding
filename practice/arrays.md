@@ -1,17 +1,17 @@
 ## Array Properties 🚀 🤖
 
 ### Property	Description 🚀
-1.constructor............ 🤖Returns the function that created the Array object's prototype
-2. length.................🔔Sets or returns the number of elements in an array
+1.constructor............ 🤖Returns the function that created the Array object's prototype <br/>
+2. length.................🔔Sets or returns the number of elements in an array <br>
 3. prototype........... 🌼Allows you to add properties and methods to an Array object
 ### Array Methods
 
 ### Method  Description
-concat()............🔔Joins two or more arrays, and returns a copy of the joined arrays
-copyWithin().........Copies array elements within the array, to and from specified positions
-entries()..............Returns a key/value pair Array Iteration Object
-every()..............Checks if every element in an array pass a test
-fill()...............Fill the elements in an array with a static value
+concat()............🔔Joins two or more arrays, and returns a copy of the joined arrays <br/>
+copyWithin().........Copies array elements within the array, to and from specified positions<br/>
+entries()..............Returns a key/value pair Array Iteration Object <br/>
+every()..............Checks if every element in an array pass a test <br/>
+fill()...............Fill the elements in an array with a static value<br/>
 filter()............Creates a new array with every element in an array that pass a test
 find()..............Returns the value of the first element in an array that pass a test
 findIndex().......... 🔔 the index of the first element in an array that pass a test
@@ -142,7 +142,7 @@ console.log(myArray.length);
 
 ##### If you create an array you create instance of the array. Array is a prototype, and this prototype has bunch of different methods. Due to inheritance each instance of the array has access to all those methods. All those methods are available for every instance of the array due to inheritance and all those methods are called " Array Higher Order Functions", because those functions are located  not inside each array but 
 
-### PUSH
+### **PUSH**
 
 ```javascript
 const myArray = [1, 2, 3];
