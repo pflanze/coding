@@ -126,6 +126,7 @@ With let Hoisting does not work.
 ### Difference between **let** and **var**
 1. **let** is limited to global scope, function scope and block scope but **var** is limited only to global scope and function scope. 
 2. If variable is declared using **let** we are not able to declare it again using **let** in the same scope. In this case we get error. With **var** it is possible to redeclare a variable in the same scope. 
+3. Variables declared with **let** are not **HOISTED**.
 
 **CONST**
 
