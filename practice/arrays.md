@@ -1,12 +1,12 @@
-##Array Properties 🚀 🤖
+## Array Properties 🚀 🤖
 
-###Property	Description 🚀
+### Property	Description 🚀
 1.constructor............ 🤖Returns the function that created the Array object's prototype
 2. length.................🔔Sets or returns the number of elements in an array
 3. prototype........... 🌼Allows you to add properties and methods to an Array object
-###Array Methods
+### Array Methods
 
-###Method  Description
+### Method  Description
 concat()............🔔Joins two or more arrays, and returns a copy of the joined arrays
 copyWithin().........Copies array elements within the array, to and from specified positions
 entries()..............Returns a key/value pair Array Iteration Object
@@ -41,11 +41,11 @@ valueOf()....... 🔔Returns the primitive value of an array
 
 
 ### Everything in JavaScript is an OBJECT
-#####Array is an OBJECT with NUMERIC property names. Its behavior is the same as any object.
+#### Array is an OBJECT with NUMERIC property names. Its behavior is the same as any object.
 
-####Ways of creating an Array 🚀
+####  Ways of creating an Array 🚀
 
-#####Array Literal Notation 
+##### Array Literal Notation 
 
 ```javascript
 const myArray = [1, 2, 3];
@@ -59,22 +59,22 @@ const myArray2 = new Array(1, 2, 3,);
 console.log(myArray2); 
 // [1, 2, 3]
 ```
-######the second syntax with the parenthesis is used when we want to create new instance of the class or function constructor. In this case it is called a built-in array function and using this built-in function we create new instance of the array.
+###### the second syntax with the parenthesis is used when we want to create new instance of the class or function constructor. In this case it is called a built-in array function and using this built-in function we create new instance of the array.
 
-######Objects are reference types and both Arrays are equal. They both hold pointers which point to places in memory, they are actually equal but pointers are different.
+###### Objects are reference types and both Arrays are equal. They both hold pointers which point to places in memory, they are actually equal but pointers are different.
 
 ```
 ```
 
 Array Literal differs from other literals simply by adding the square brackets. Inside of the square brackets is put the value, separated by commas. After each comma add additional space.
 
-###NOTE!!!
-####Arrays can hold values of any types: numbers, objects, strings, booleans. 
-######In the given example there are 3 number values 
+### NOTE!!!
+#### Arrays can hold values of any types: numbers, objects, strings, booleans. 
+###### In the given example there are 3 number values 
 
-####Arrays VS Object
+#### Arrays VS Object
 
-```javascript
+``` javascript
 const myArray = [1, 2, 3];
 console.log(myArray);
 // [1,2,3]
@@ -82,7 +82,7 @@ console.log(myArray);
 // length property appears automatically
 ```
 
-####OBJECT Literal Notation 
+#### OBJECT Literal Notation 
 ```javascript
 const myObject = {
     0: 1,    // 0, 1, 2 are numeric properties
@@ -98,10 +98,10 @@ console.log(myObject);
 // the _proto_ is an OBJECT 
 ```
 
-#####What is the difference between the two myArray and myObject ? 
-######In the first case is used Array Literal and in the second is used Object Literal. The only difference is in _proto_ field. Each array have access to different array methods. But myObject will not have access to those methods.
+##### What is the difference between the two myArray and myObject ? 
+###### In the first case is used Array Literal and in the second is used Object Literal. The only difference is in _proto_ field. Each array have access to different array methods. But myObject will not have access to those methods.
 
-###How to READ Array Values
+### How to READ Array Values
 ```javascript
 
 const myArray = [1, 2, 3, 4];
@@ -118,10 +118,10 @@ console.log(myArray.length); // 4
 
 
 ```
-####Using bracket notation we get access to specific element of the array. Inside the square brackets we put the index of the specidic element. Indexes start from zero[0]. ZERO produces value zero 
+#### Using bracket notation we get access to specific element of the array. Inside the square brackets we put the index of the specidic element. Indexes start from zero[0]. ZERO produces value zero 
 #### DOT Notation is not allowed to be used in order to access those property names. 
 
-###Modify Array VALUES
+### Modify Array VALUES
 
 ```javascript
 const myArray  = [1, 2, 3, 4];
@@ -137,5 +137,28 @@ myArray[4] = true;
 
 console.log(myArray); // [1, 2,"abc", 4, true]
 console.log(myArray.length); 
+
+```
+
+##### If you create an array you create instance of the array. Array is a prototype, and this prototype has bunch of different methods. Due to inheritance each instance of the array has access to all those methods. All those methods are available for every instance of the array due to inheritance and all those methods are called " Array Higher Order Functions", because those functions are located  not inside each array but 
+
+### PUSH
+
+```javascript
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.push(4);
+
+console.log(myArray); // [1, 2, 3, 4]
+
+myArray.push(true);
+console.log(myArray);
+// [1, 2, 3, 4, true]
+
+// when const is used for declaration of the variable,
+// - we prevent reassignment of the value of this variable 
+// Array has Object value type and Object is reference type . 
+// "myArray" variable holds pointer that is not changed when we modify the Array itself 
 
 ```
