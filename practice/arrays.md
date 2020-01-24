@@ -121,4 +121,21 @@ console.log(myArray.length); // 4
 ####Using bracket notation we get access to specific element of the array. Inside the square brackets we put the index of the specidic element. Indexes start from zero[0]. ZERO produces value zero 
 #### DOT Notation is not allowed to be used in order to access those property names. 
 
-###
+###Modify Array VALUES
+
+```javascript
+const myArray  = [1, 2, 3, 4];
+console.log(myArray); // [1, 2, 3, 4]
+console.log(myArray.length); // 4
+
+myArray[2] = "abc"; 
+
+console.log(myArray); // [1, 2, "abc", 4]
+console.log(myArray[2]); // "abc"
+
+myArray[4] = true;
+
+console.log(myArray); // [1, 2,"abc", 4, true]
+console.log(myArray.length); 
+
+```

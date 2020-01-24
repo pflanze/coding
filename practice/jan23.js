@@ -362,3 +362,47 @@ const newString = remainder + firstChr + "ay"
 }
 const strPig = "hi go";
 console.log(pigLatin(strPig))
+
+
+
+// My SOLUTION 
+
+// Homework 
+let str="you can just focus  it is not that hard"
+
+function pigLatin(str){
+    const words=str.split(" ");
+
+    return words.map(word=>{
+        const firstChar=word[0].toLowerCase();
+        const secondChar=firstChar===word[0]? word[1] : word[1].toUpperCase();
+
+        return secondChar+word.substring(2)+firstChar;
+    }).join(" ");
+}
+
+console.log(pigLatin(str))
+
+// another way
+
+function pigLatin(str){
+  const vowels=["a","e","i","o","u"];
+
+  // split the sentence into an array of words (rly stupid because it only splits at space)
+  const words=str.split(" ");
+
+  return words.map(word=>{
+      // get the first character of each word string
+      const firstChar=word[0].toLowerCase();
+      // if the first character is inside the vowels array just add "way" to the end of the word and you are done with this word
+      if(vowels.includes(firstChar)){
+          return word+"way";
+      }
+      // else do some more work: if the first char is uppercase transform the second char to uppercase too and safe it in secondChar
+      const secondChar=firstChar===word[0]? word[1] : word[1].toUpperCase();
+
+      return secondChar+word.substring(2)+firstChar+"ay";  // second char of word + word without its first 2 chars + first char of word + "ay"
+  }).join(" ");  //merge the modified array items into a new string
+}
+
+console.log(pigLatin(str))
