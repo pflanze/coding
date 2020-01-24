@@ -21,7 +21,7 @@ includes()............. 💢Check if an array contains the specified element<br/
 indexOf()............🍎Search the array for an element and returns its position<br/>
 isArray()...........🔔Checks whether an object is an array</br>
 join().................🔔Joins all elements of an array into a string<br/>
-keys()..................🛎Returns a Array Iteration Object, containing the keys of the original array
+keys()..................🛎Returns a Array Iteration Object, containing the keys of the original array<br/>
 lastIndexOf()...........🚀Search the array for an element, starting at the end, and returns its position<br/>
 map().................🤖Creates a new array with the result of calling a function for each array element<br/>
 pop()................🚀Removes the last element of an array, and returns that element<br/>
@@ -161,4 +161,79 @@ console.log(myArray);
 // Array has Object value type and Object is reference type . 
 // "myArray" variable holds pointer that is not changed when we modify the Array itself 
 
+
 ```
+### PUSH 
+####
+
+```javascript
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.push(4); 
+
+console.log(myArray); // [1, 2, 3, 4]
+
+myArray.push(true); 
+
+console.log(myArray);
+// [1, 2, 3, 4, true]
+
+```
+
+
+### POP
+####
+
+``` javascript
+const myArray = [1, 2, 3];
+console.log(myArray); //[1, 2, 3]
+
+myArray.pop();
+
+console.log(myArray); // [1, 2]
+
+const removedElement = myArray.pop();
+
+console.log(myArray); // [1]
+console.log(removedElement); // 2
+
+```
+
+### SHIFT 
+#### Remove forst element of the array 
+
+```javascript
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.shift(); // returns removed element
+
+console.log(myArray); // [2, 3]
+
+const removedElement = myArray.shift();
+
+console.log(myArray); // [3]
+console.log(removedElement); // 2
+
+```
+
+### UNSHIFT 
+
+#### Adds element at the beginning of the array
+```javascript
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.unshift(0); // one argument [0]
+
+console.log(myArray); // [0, 1, 2, 3]
+
+myArray.unshift("abc");  // "abc" is string
+console.log(myArray);
+// ["abc", 0, 1, 2, 3]
+
+
+```
+
+##### We don't care about the order of the elements in the array. Our goal is to place several elements in one bucket(in one array).
