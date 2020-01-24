@@ -140,5 +140,91 @@ myConst = 20;
 ### Variable Usage Guidelines
 1. Make code readable 
 2. Always declare variable before first usage
+   
+   ```javascript
+   a = 10;
+   var a;
+
+   ```
 3. Always add "use strict" at the beginning of each JS file.
-4. Don' expose to the outer scopes locally used variables.
+    ```javascript
+    "use strict"
+   var b = 10;
+   functin fn(){
+       var d = b; // if do not declare d  we will get error
+       return d;
+   }
+   fn();
+
+   ```
+
+4. Don't expose to the outer scopes locally used variables.
+   ```javascript
+   // Expose
+   var myArray;
+   var i;
+    function fn2() {
+        myArray = [1, 2, 3];
+        for (i = 0; i< myArray.length; i++) {
+            console.log(myArray[i]);
+        }
+    }
+    fn2();
+
+
+    // Don't expose!
+    
+    function fn2() {
+        myArray = [1, 2, 3];
+        for (var i = 0; i< myArray.length; i++) {
+            console.log(myArray[i]);
+        }
+    }
+    fn2();
+   ```
+#### Which variable declaration to use: 🍄 🙃 🔔 🌸 😳 🔨
+**Let** is **var** extention., not new var. 
+**USAGE**
+**VAR** - for variables that are used accross entire function.Declared usually at the beginning of the scope. 
+**LET** - for temporal variables that are limited to the block scopes. Declared directly in the block or just before it. 
+**CONST** - for variables that should't be reassigned. Declaration place depends on the **const** usage.
+
+**const**
+   
+   ```javascript
+    //Example 1
+
+
+   // Example 2 (Execute in Node.js)
+   const path = require("path");
+
+   console.log(path.resolve())
+
+   // Example 3 
+   // 
+   const sum = function(a, b) {
+       return a + b;
+   }
+    //
+   // sum = 5;  // gives error 
+   console.log(sum(2, 5)); // 7 
+
+   ```
+
+   ####  Where to use **let**
+
+      
+   ```javascript
+   a = 10;
+   var a;
+
+   ```
+
+   **var**
+
+      
+   ```javascript
+   a = 10;
+   var a;
+
+   ```
