@@ -129,5 +129,16 @@ With let Hoisting does not work.
 3. Variables declared with **let** are not **HOISTED**.
 
 **CONST**
+Variable cannot be reassigned.
+```javascript
+// const - contains only pointer 
+const myConst = 10;
+myConst = 20;
+
+```
 
 ### Variable Usage Guidelines
+1. Make code readable 
+2. Always declare variable before first usage
+3. Always add "use strict" at the beginning of each JS file.
+4. Don' expose to the outer scopes locally used variables.
