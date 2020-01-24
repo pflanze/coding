@@ -61,8 +61,64 @@ console.log(myArray2);
 ```
 ######the second syntax with the parenthesis is used when we want to create new instance of the class or function constructor. In this case it is called a built-in array function and using this built-in function we create new instance of the array.
 
-Array literal differs from other literals simply by adding the square brackets. Inside of the square brackets is put the value, separated by commas. After each comma add additional space.
+######Objects are reference types and both Arrays are equal. They both hold pointers which point to places in memory, they are actually equal but pointers are different.
+
+```
+```
+
+Array Literal differs from other literals simply by adding the square brackets. Inside of the square brackets is put the value, separated by commas. After each comma add additional space.
 
 ###NOTE!!!
 ####Arrays can hold values of any types: numbers, objects, strings, booleans. 
 ######In the given example there are 3 number values 
+
+####Arrays VS Object
+
+```javascript
+const myArray = [1, 2, 3];
+console.log(myArray);
+// [1,2,3]
+// _proto_ is an ARRAY 
+// length property appears automatically
+```
+
+####OBJECT Literal Notation 
+```javascript
+const myObject = {
+    0: 1,    // 0, 1, 2 are numeric properties
+    1: 2,
+    2: 3,
+    length: 3 // length is added 
+    // _proto_ property will be created automatically 
+
+};
+console.log(myObject);
+// {0: 1, 1: 2, 2: 3, length: 3}
+// the result is in OBJECT LITERAL FORMAT 
+// the _proto_ is an OBJECT 
+```
+
+#####What is the difference between the two myArray and myObject ? 
+######In the first case is used Array Literal and in the second is used Object Literal. The only difference is in _proto_ field. Each array have access to different array methods. But myObject will not have access to those methods.
+
+###How to READ Array Values
+```javascript
+
+const myArray = [1, 2, 3, 4];
+console.log(myArray); //  [1, 2, 3, 4]
+
+console.log(myArray[0]); // 1 
+console.log(myArray[1]); // 2
+// [0] , [1] etc. are numeric property names
+// any element of the array can be accessed by its Numeric Property Name
+
+
+console.log(myArray.length); // 4
+
+
+
+```
+####Using bracket notation we get access to specific element of the array. Inside the square brackets we put the index of the specidic element. Indexes start from zero[0]. ZERO produces value zero 
+#### DOT Notation is not allowed to be used in order to access those property names. 
+
+###
