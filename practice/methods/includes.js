@@ -16,3 +16,16 @@
  */
 
 // EXAMPLE OF includes() helper method usage
+// example 1
+
+const myArray = [10, "abc", true, undefined, null, [1, 2]];
+
+console.log(true, myArray.includes(true));
+console.log(10, myArray.includes(10));
+console.log("abc", myArray.includes("abc"));
+
+console.log("abc", "starting from index3", myArray.includes("abc", 3));
+
+console.log("nul", myArray.includes(null));
+
+// EXAMPLE 2

@@ -71,3 +71,7 @@ console.log("___");
 // and during forEach method iteration each element from the myCities array will be passed to this callback function,
 // as element and its index will be passed as will as a second argument.
 myCities.forEach((element, index) => console.log(arrayInfo(element, index)));
+
+// ARE ARRAYS EQUAL OR NOT
+
+// CHECK IF ELEMENT IS IN AN ARRAY
