@@ -231,10 +231,45 @@ function getAge(DOB) {
 
 alert(getAge("6/17/1981"));
 
+//Create a function that accepts a text from user and check if the user has entered a month name,
+// if so print out that month and in which season it is.
+const checkMonth1 = month => {
+  month = month.toLowerCase();
+  let months = [
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "july",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+    "January"
+  ];
+  let autumn = ["august", "september", "october"];
+  let winter = ["november", "december", "january"];
+  let spring = ["february", "march", "april"];
+  let summer = ["may", "june", "july"];
+  months = months.map(editedMonth => editedMonth.toLowerCase());
+  if (months.includes(month) && autumn.includes(month)) {
+    console.log(month + " Autumn");
+  } else if (months.includes(month) && winter.includes(month)) {
+    console.log(month + " Winter");
+  } else if (months.includes(month) && spring.includes(month)) {
+    console.log(month + " Spring");
+  } else if (months.includes(month) && summer.includes(month)) {
+    console.log(month + " Summer");
+  }
+};
+checkMonth1("june");
+
 // Write a JavaScript function to get the month name from a particular date.
 
-let month_name = function(dt) {
-  mlist = [
+let month_name = function(date) {
+  monthlist = [
     "January",
     "February",
     "March",
@@ -248,7 +283,7 @@ let month_name = function(dt) {
     "November",
     "December"
   ];
-  return mlist[dt.getMonth()];
+  return monthlist[date.getMonth()];
 };
 console.log(month_name(new Date("10/11/2009")));
 console.log(month_name(new Date("11/13/2019")));
