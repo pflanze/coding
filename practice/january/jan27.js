@@ -179,6 +179,30 @@ function exponent(staterNum, exponent) {
 }
 console.log(exponent(2, 4));
 
+// another option 
+const exponent = (num, exp) => {
+    let result = Math.pow(num, exp)
+    display(`The result of ${num} multiplied by itself ${exp} times is ${result}`);
+}
+exponent(3,6);
+
+
+// spread syntax / spread operator . (...)
+
+let array = [1, 3, 433, 6];
+let array copyArray = [...array];
+console.log(copyArray);
+
+function sum(...args) // receiving an element 
+{
+    let array = args;
+    console.log(array[0]); // the function will process it as array using the spread operator 
+}
+
+{
+    results = x + y + z;
+    sum(3,4, 4, 5);
+}
 // exercise one 
 
 function maxTwoNum(x, y){	
@@ -330,3 +354,4 @@ function add () {
   console.log(fruitOrVegetable(['tomato', 'banana', 'cucumber', 'pizza', 'apple']));
   // [ 'vegetable', 'fruit', 'vegetable', 'unknown', 'fruit' ]
   
+//
