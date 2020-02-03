@@ -44,7 +44,7 @@ console.log(number);
 
 // closure
 // var counter = 0;
-function add ()  {
+(function add ()  {
     var counter = 0;
     const adding = () => {counter++ }
     adding();
@@ -52,10 +52,8 @@ function add ()  {
     return function () {
         counter++;
         return counter;
-}
-    };
-   
-}) ();
+}  
+})();
 add(); // 1
 add(); //2
 add(); // 3
@@ -83,9 +81,9 @@ console.log(add());
 // self invoking anonymous function
 
 // two ways * passing parameter
-const sum = ((x,y)) => {
+const sum = ((x,y) => {
   return x + y;
-}) (4,5); // invoking == calling
+})(4,5); // invoking == calling
 console.log(sum);
 
 // summarize of CLOSURE 
@@ -93,6 +91,8 @@ console.log(sum);
 * 
 * THe CLOSURE is a function that REMEMBERS  the variable from the place where it is defined , regardless 
 * of where it is executed later
+* A closure is the combination of an inner function and variables defined at outer scope but accessible to inner function. 
+* In other words, a closure is an inner function that can access outer function’s variables. 
 */
 
 // IIFE 
@@ -130,9 +130,9 @@ IIFEs are very useful because they don’t pollute the glo
   /* */
 }())
 
-(() => {
+//(() => {
   /* */
-}())
+//}())
 
 
 
@@ -170,7 +170,8 @@ if (num == 20) {
 
 // NESTED ARRAYS 
 // array inside an array 
-/**JavaScript lets you create arrays inside arrays, known as nested arrays. 
+/**JavaScript lets you create arrays inside arrays, known as nested arrays.
+ * An array is an ordered set of values that you refer to with a name and an index. 
  * In a nested array, the elements of one array are themselves arrays. For example:
 */
 
@@ -227,3 +228,160 @@ for ( i=0; i<animals.length; i++ )
  * - such as our animals example above — and when you’re creating multidimensional data structures
  *  (commonly used in games and graphics applications). 
  */
+
+ // Write a function multiplier that uses a closure to perform multiplication.
+ // the outer function should be stored in a variable which is then called.
+
+ /**function Multiply(arguments) {
+
+  for(var i =0; i <arguments.length; i++) {
+    var number = arguments.length[i];
+  }
+  return function (res) {
+      return number*res.valueOf();
+  };
+}
+console.log(Multiply(5)(5)(6)(8));
+*/
+
+function multiply(...args) {
+  function m(f, ...a) {
+      p *= f;
+      if (a.length) {
+          m(...a);
+      }
+      return m;
+  }
+
+  var p = 1;            // neutral value for multiplication
+  m.toString = _ => p;
+  return m(...args);
+}
+
+console.log(multiply(5)(5)(6)(8));
+//console.log(multiply(2, 3, 4)(5)(6, 7));
+
+// Write a function multiplier that uses a closure to perform multiplication.
+ // the outer function should be stored in a variable which is then called.
+// separate the function call
+function multiplier (num) { 
+  //return multiplyBy * num;
+  // inner function 
+  return x => x * num;
+  // returning another function with another/ different parameter 
+
+}
+return multiplier;
+const times = multiplier (2);
+console.log(times(5));
+
+(function() {
+  var all = "Hi";
+  console.log(all);
+})();
+
+  
+ /**
+  * One function written inside another function is called a nested function. 
+  * Suppose that there are two functions outer function and inside it there is an inner function.
+  *  The inner function will have access to its own variables, the outer functions variables, 
+  * arguments and it has access to global variables. This is done by a scope chain. 
+  * Every function so created has a scope chain associated with which helps us in accessing the variables value.
+  * 
+  * Now what are closures? Closures - the nested functions continue to live even when
+  *  the outer function has completed is closure. 
+  * The day to day way in which we are able to see closure is callbacks. 
+  * Callbacks are functions which are usually executed when an event completes, 
+  * when they are executed they have access to outer functions variables 
+  * even though the outer function has completed its execution.
+  * 
+  * 
+  * In JavaScript, all functions work like closures. 
+  * A closure is a function, which uses the scope in which it was declared when invoked. 
+  * It is not the scope in which it was invoked.
+  * 
+  * 
+  * Closure is a computer science term that defines how a function can maintain a record of the environment 
+  * in which it was called. This means that a function can keep track of the arguments and variables 
+  * it was initially called with, even when it’s called outside of that scope.
+  * A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain.
+  * In other words, an inner function will always have access to the variables and parameters of 
+  * its outer function, even after the outer function has returned.
+  * A closure gives you access to an outer function’s scope from an inner function.
+  */
+
+
+  //***********Example 1***************//  
+function yearsLeftForRetirement(retirementAge) {  
+  const message = ' years left for the retirement';  
+  return function calcluateYears(currentYear, birthYear) {  
+      const yearsLeftForRetirement = retirementAge - (currentYear - birthYear);  
+      console.log(yearsLeftForRetirement + message);  
+  };  
+}  
+const birthYear = 1985;  
+//Get years left for retirement in India  
+const retirementInIndia = yearsLeftForRetirement(62);  
+retirementInIndia(new Date().getFullYear(), birthYear);  
+//Get years left for retirement in US  
+const retirementInUS = yearsLeftForRetirement(65);  
+retirementInUS(new Date().getFullYear(), birthYear);  
+//Same can also be written as  
+yearsLeftForRetirement(65)(new Date().getFullYear(), birthYear); 
+
+/**
+ * 
+ * Clearly here we can see that the inner function has access to message constant and retirement 
+ * age parameter which are outside the scope of the inner function (CalculateYears).
+ * Also, the inner function has access to them even after the yearsLeftForRetirement function 
+ * is called because that is why we are able to log the message in the console.
+
+OUTPUT
+ * To use a closure, simply define a function inside another function and expose it.
+ * To expose a function, return it or pass it to another function.
+ * The inner function will have access to the variables in the outer function scope, 
+ * even after the outer function has returned.
+ * 
+ */
+
+ //**********EXAMPLE***************//
+/**
+ * 
+ * Write a function that accepts several parameters and calculates the number of money that will have been saved as pension until a person retires. The function should be self invoked and should have the following parameters:
+The current age of the person // e.g. 40
+The retirement age of the person // e.g. 60
+The monthly wage the person earns // e.g. 1000
+The percentage (as integer) that the person saves each month // e.g. 10%
+If the person has already retired then the message ‘You’re already retired!’ should be printed. If not, then the program should calculate how many years remain until the person retires, the monthly income and take a specific percent of this income every month as saved money.
+Example: A lady is 40 years old, she retires at 65, she earns $2000 per month and she saves the 5% of it. How much money will she have saved until she retires?
+Output: $30000
+ */
+
+ // 
+ // ( function(currentAge, retirementAge, monthlyWage, percentageSaved) { // old way
+ ((currentAge, retirementAge, monthlyWage, percentageSaved) =>{
+
+  if (currentAge >= retirementAge){
+
+  } else {
+    let yearsToSave = retirementAge - currentAge;
+    console.log(yearsToSave + "years to go");
+    let monthsToSave = yearsToSave * 12;
+    console.log(monthsToSave +"months to go");
+    let amountSavedByMonth = (monthlyWage * percentageSaved) / 100;
+    let totalSaved = amoubtSavedByMonth * monthsToSave;
+    console.log(`you will get very very old in ${yearsToSave} and you will have ${totalSave} in your bank`);
+  }
+ 
+ })(30, 65, 1000,5); // passing of the parameters in numbers
+
+
+ console.log();
+
+ // trim()
+ // trimEnd()
+ // trimStart()
+ // charCodeAt()
+ // endsWith()
+ // startsWith()
+ // 
