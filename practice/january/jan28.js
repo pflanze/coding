@@ -59,8 +59,8 @@ function average(numbers) {
 // exercise 1
 // count ocurences
 function char_count(str, letter) {
-  var letter_Count = 0;
-  for (var position = 0; position < str.length; position++) {
+  let letter_Count = 0;
+  for (let position = 0; position < str.length; position++) {
     if (str.charAt(position) == letter) {
       letter_Count += 1;
     }
@@ -146,9 +146,9 @@ const myDogAge = () => {
   );
 };
 
-const validInput = myAge => {
+const validInput = myAge2 => {
   alert("Please only use numbers.");
-  myAge = prompt("Please enter your age.");
+  myAge2 = prompt("Please enter your age.");
   myDogAge();
 };
 
@@ -287,3 +287,34 @@ let month_name = function(date) {
 };
 console.log(month_name(new Date("10/11/2009")));
 console.log(month_name(new Date("11/13/2019")));
+
+//  Create a function will calculate how many times empty space occurred in a given string
+// by the user and print out only the characters number
+
+let arr = []; //new storage
+str = str.split(" "); //split by spaces
+arr.push(str.shift()); //add the number
+arr.push(str.join(" ")); //and the rest of the string
+
+console.log(arr[("72", "studying javascript is fun")]);
+//arr is now:
+//["72", "studying javascript is fun"];
+
+//
+const emptySpace = (string) {
+  let counter = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    
+    if (string(i) == ' ') {
+      counter++
+    }
+    return counter
+  }
+
+let string = "text to split";
+
+
+
+
+console.log(emptySpace(string));
