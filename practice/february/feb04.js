@@ -234,6 +234,7 @@ console.log(getProperties(person));
 //   e: 1,
 // }
 
+// My SOLUTION
 function countLetters(words) {
   let i,
     result = [],
