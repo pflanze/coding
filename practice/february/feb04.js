@@ -1,7 +1,7 @@
-// OBJECTS 
-// OBJECT in JavaScript is a core data structure 
-// we describe real world entities made up of properties and methods. 
-// properties are the variables of an object 
+// OBJECTS
+// OBJECT in JavaScript is a core data structure
+// we describe real world entities made up of properties and methods.
+// properties are the variables of an object
 
 /** 
  * JavaScript is designed on a simple object-based paradigm. 
@@ -31,130 +31,130 @@
   * - Numbers, Strings, Booleans , null, undefined, Symbol
   */
 
-  /**
-   * Reference Value types are ONLY OBJECTS :
-   * {...}
-   * Arrays
-   * DOM Nodes
-   */
+/**
+ * Reference Value types are ONLY OBJECTS :
+ * {...}
+ * Arrays
+ * DOM Nodes
+ */
 
-   // Property is an association between a name and a value that is part of an object 
-   // PROPERTIES ARE THE BUILDING BLOCKS OF AN OBJECT 
-   // A property whose value is a function is called a method. 
+// Property is an association between a name and a value that is part of an object
+// PROPERTIES ARE THE BUILDING BLOCKS OF AN OBJECT
+// A property whose value is a function is called a method.
 
-  // Object.entries()
+// Object.entries()
 
-  const person = {
-      name: 
-  }
+const person = {
+  name: "irena"
+};
 
-  /**
+/**
    * For plain objects, the following methods are available:
 
     Object.keys(obj) – returns an array of keys.
     Object.values(obj) – returns an array of values.
     Object.entries(obj) – returns an array of [key, value] pairs.
    */
-  // object.keys brings back an array of keys
-  console.log(Object.keys(person));
+// object.keys brings back an array of keys
+console.log(Object.keys(person));
 
-  // Object.values 
-  console.log(Object.values(person));
+// Object.values
+console.log(Object.values(person));
 
-  /**
-   * Object.entries() method in JavaScript returns an array consisting of 
-   * enumerable property [key, value] pairs of the object which are passed as the parameter 
-   * whereas Object.values() method in JavaScript returns an array whose elements 
-   * are the enumerable property values found on the object. 
-   * 
-   */
+/**
+ * Object.entries() method in JavaScript returns an array consisting of
+ * enumerable property [key, value] pairs of the object which are passed as the parameter
+ * whereas Object.values() method in JavaScript returns an array whose elements
+ * are the enumerable property values found on the object.
+ *
+ */
 
-  // Object.entries() 
-  /**
-   * Object.entries() method is used to return an array consisting of 
-   * enumerable property [key, value] pairs of the object which are passed as the parameter. 
-   * The ordering of the properties is the same as that given by looping over the property values 
-   * of the object manually.
-   */
-  for (let [key, value] of Object.entries(person)) { 
+// Object.entries()
+/**
+ * Object.entries() method is used to return an array consisting of
+ * enumerable property [key, value] pairs of the object which are passed as the parameter.
+ * The ordering of the properties is the same as that given by looping over the property values
+ * of the object manually.
+ */
+for (let [key, value] of Object.entries(person)) {
   console.log(`${key} : ${value}`);
-    }
+}
 
-    // Methods
-    person.print();
-    console.log();
+// Methods
+//person.print();
+//console.log();
 
-    // Create an object named person. Loop through the object and print both the property
-    // and value of the object.
+// Create an object named person. Loop through the object and print both the property
+// and value of the object.
 
-    for (let prop in person) {
-        console.log(`person.${prop} : ${person[prop]}`);
-    }
+for (let prop in person) {
+  console.log(`person.${prop} : ${person[prop]}`);
+}
 
-    /**
-     * 
-     * In the living world of object-oriented programming we already know the importance of classes and objects 
-     * but unlike other programming languages, JavaScript does not have the traditional classes 
-     * as seen in other languages. 
-     * But JavaScript has objects and constructors which work mostly in the same way to perform 
-     * the same kind of operations.
-     * Constructors are general JavaScript functions which are used with the “new” keyword. 
-     * Constructors are of two types in JavaScript i.e. built-in constructors(array and object) and 
-     * custom constructors(define properties and methods for specific objects).
-     * Constructors can be useful when we need a way to create an object “type” that can be used multiple times 
-     * without having to redefine the object every time and this could be achieved using 
-     * the Object Constructor function. 
-     * It’s a convention to capitalize the name of constructors to distinguish them from regular functions.
-     * For instance, consider the following code:
-     */
+/**
+ *
+ * In the living world of object-oriented programming we already know the importance of classes and objects
+ * but unlike other programming languages, JavaScript does not have the traditional classes
+ * as seen in other languages.
+ * But JavaScript has objects and constructors which work mostly in the same way to perform
+ * the same kind of operations.
+ * Constructors are general JavaScript functions which are used with the “new” keyword.
+ * Constructors are of two types in JavaScript i.e. built-in constructors(array and object) and
+ * custom constructors(define properties and methods for specific objects).
+ * Constructors can be useful when we need a way to create an object “type” that can be used multiple times
+ * without having to redefine the object every time and this could be achieved using
+ * the Object Constructor function.
+ * It’s a convention to capitalize the name of constructors to distinguish them from regular functions.
+ * For instance, consider the following code:
+ */
 
-    function Automobile(color) {
-        this.color=color;
-      }
-      
-      var vehicle1 = new Automobile ("red");
+function Automobile(color) {
+  this.color = color;
+}
 
-      /**
-       * The function “Automobile()” is an object constructor, and its properties and methods i.e “color” 
-       * is declared inside it by prefixing it with the keyword “this”. 
-       * Objects defined using an object constructor are then made instants using the keyword “new”.
-       * When new Automobile() is called, JavaScript does two things:
-       */
+var vehicle1 = new Automobile("red");
 
-     // It creates a fresh new object(instance) Automobile() and assigns it to a variable.
-      //It sets the constructor property i.e “color” of the object to Automobile.
+/**
+ * The function “Automobile()” is an object constructor, and its properties and methods i.e “color”
+ * is declared inside it by prefixing it with the keyword “this”.
+ * Objects defined using an object constructor are then made instants using the keyword “new”.
+ * When new Automobile() is called, JavaScript does two things:
+ */
 
-    /**
-     * Object.assign() Method 
-     * Among the Object constructor methods, there is a method Object.assign() which is used
-     *  to copy the values and properties from one or more source objects to a target object. 
-     * It invokes getters and setters since it uses both [[Get]] on the source and [[Set]] on the target. 
-     * It returns the target object which has properties and values copied from the target object. 
-     * Object.assign() does not throw on null or undefined source values.
-     * Applications:
-     * Object.assign() is used for cloning an object.
-     * Object.assign() is used to merge object with same properties.
-     * Syntax:
-     * Object.assign(target, ...sources)
-     * 
-     */
+// It creates a fresh new object(instance) Automobile() and assigns it to a variable.
+//It sets the constructor property i.e “color” of the object to Automobile.
 
-     /**
-      * 
-      * Parameters Used:
-      * target : It is the target object from which values and properties have to be copied.
-      * sources : It is the source object to which values and properties have to be copied.
-      * Return Value:
-      * Object.assign() returns the target object.
-      */
-    // OBJECT assign
-    const obj1 = {1 : 2, 2: 300}; // the target object 
-    const obj2 = {1: 4, 3: 3224};
-    const totalObj = Object.assign(obj1, obj2); // obj1 is the target , and obj2 is source
-    console.log(totalObj);
-    
-    // Get Values. Create a function that returns an array of all values of an object’s properties.
-const   getObjectValues = {
+/**
+ * Object.assign() Method
+ * Among the Object constructor methods, there is a method Object.assign() which is used
+ *  to copy the values and properties from one or more source objects to a target object.
+ * It invokes getters and setters since it uses both [[Get]] on the source and [[Set]] on the target.
+ * It returns the target object which has properties and values copied from the target object.
+ * Object.assign() does not throw on null or undefined source values.
+ * Applications:
+ * Object.assign() is used for cloning an object.
+ * Object.assign() is used to merge object with same properties.
+ * Syntax:
+ * Object.assign(target, ...sources)
+ *
+ */
+
+/**
+ *
+ * Parameters Used:
+ * target : It is the target object from which values and properties have to be copied.
+ * sources : It is the source object to which values and properties have to be copied.
+ * Return Value:
+ * Object.assign() returns the target object.
+ */
+// OBJECT assign
+const obj1 = { 1: 2, 2: 300 }; // the target object
+const obj2 = { 1: 4, 3: 3224 };
+const totalObj = Object.assign(obj1, obj2); // obj1 is the target , and obj2 is source
+console.log(totalObj);
+
+// Get Values. Create a function that returns an array of all values of an object’s properties.
+/*const   getObjectValues = {
     return Object.values(object)
         choice1: "tea",
         choice2: "coffee",
@@ -173,28 +173,82 @@ const   getObjectValues = {
       person.printOut = () =>{
           return
       };
+*/
+// Object.defineProperty()
+Object.defineProperty(person, "birthday", {
+  value: 20,
+  variable: false
+});
+//person.birthDay = 20;
+console.log(person.birthday);
 
-      // Object.defineProperty()
-      Object.defineProperty(person, "birthday",{
-        value: 20,
-        variable: false
-      });
-      //person.birthDay = 20;
-      console.log(person.birthday);
+//Object.defineProperties
+Object.defineProperties(person, {
+  p1: {
+    value: 33,
+    variable: true
+  },
+  p2: {
+    value: {},
+    variable: false
+  },
+  p3: {}
+});
+console.log(person.p3);
+console.log(Object.keys(person));
 
-      //Object.defineProperties
-      Object.defineProperties(person, {
-          p1: {
-              value: 33,
-              variable: true
-          },
-          p2: { 
-          value: {},
-          variable: false
-         },
-         p3: {}
+// one value can be stored in one property
 
-      });
-      console.log()
+//All JavaScript object keys are strings. Even if you pass an object as a key,
+// the object's toString() will be called on it, and the key will be stringified to [object Object].
 
-      // one value can be stored in one property
+// How to use object as key to a value#
+//There is a way to use objects and keys to values, just not values of a conventional Object.
+// What you need is a WeakMap.
+
+//A WeakMap is a key-value object, where the key must, in
+
+//
+
+const getProperties = obj => {
+  return Object.getOwnPropertyNames(obj); // getOWnPropertyName gets everything
+};
+console.log(Object.keys(person));
+console.log(getProperties(person));
+
+//
+
+//Write a function countLetters that can return all the unique characters that exist in a string
+//that is passed into the function.
+//Furthermore, the function should also report back how many instances of each letter were found in the string.
+
+// the function countLetters needs to return an object.
+// It should return an object where each unique character encountered is a property of the object and the value for that property/key should be the number of occurrences for that character
+
+//  countLetters("Cool Code") the output would look like
+// {
+//   c: 2,
+//   o: 3,
+//   l: 1,
+//   d: 1,
+//   e: 1,
+// }
+
+function countLetters(words) {
+  let i,
+    result = [],
+    obj = {};
+  for (i = 0; i < words.length; i++) {
+    for (i in words) {
+      obj[words[i]] = (obj[words[i]] || 0) + 1; // I am incrementing count if element already exists
+    }
+  }
+
+  for (i in obj) {
+    if (i != " ") {
+      result += i.toLowerCase() + ": " + obj[i] + ", ";
+    }
+  }
+  return result;
+}
+console.log(countLetters("It is Cool to Code with you!"));
