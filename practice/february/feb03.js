@@ -320,7 +320,7 @@ function yearsLeftForRetirement(retirementAge) {
   };  
 }  
 const birthYear = 1985;  
-//Get years left for retirement in India  
+//Get years left for retirement 
 const retirementInIndia = yearsLeftForRetirement(62);  
 retirementInIndia(new Date().getFullYear(), birthYear);  
 //Get years left for retirement in US  
@@ -378,10 +378,46 @@ Output: $30000
 
  console.log();
 
+ /** Conclusion
+  * The scope is what rules the accessibility of variables in JavaScript. 
+  * There can be a function or a block scope.
+  * The lexical scope allows a function scope to access statically the variables from the outer scopes.
+  * Finally, a closure is a function that captures variables from its lexical scope. 
+  * In simple words, the closure remembers the variables from the place where it is defined, 
+  * no matter where it is executed.
+  * Closures capture variables inside event handlers, callbacks. They’re used in functional programming.
+  *  Moreover, you could be asked how closures work during a Frontend job interview.
+  * 
+  */
+
  // trim()
+let str = ' Hi';
+console.log(str.trim());
+
  // trimEnd()
+ console.log(str.trimEnd());
  // trimStart()
- // charCodeAt()
- // endsWith()
+ console.log(str.trimStart());
+ // charCodeAt() // charachterCode method
+let chr = 'A'; // UTF-16 , UTF -8 , ASCII,  if it is small "a" output will be 97
+console.log(chr.charCodeAt(0) - 96); // output 65
+ 
  // startsWith()
- // 
+ let text = "Hi tonight is cool";
+console.log(text.startsWith("We"));
+
+ // endsWith
+ console.log(text.endsWith("we", 5));
+
+
+ //codePointAt()
+ const icons ="👍";
+
+ console.log
+
+// SPREAD SYNTAX ... exercise
+
+// The String() function converts the value of an object to a string. 
+//Note: The String() function returns the same value as toString() of the individual objects. 
+//A JavaScript string is zero or more characters written inside quotes. 
+// JavaScript strings are used for storing and manipulating text.
