@@ -253,3 +253,27 @@ function countLetters(words) {
   return result;
 }
 console.log(countLetters("It is Cool to Code with you!"));
+
+// another solution
+
+// js will hoist the countLetters function
+function countLetters(str) {
+  let arr = str.split("");
+  let result = {};
+  function countOccurrences(string, letter) {
+    let counter = 0;
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] === letter) {
+        counter++;
+      }
+    }
+    return counter;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    let currentChar = arr[i];
+    // calling my object with bracket notation
+    result[currentChar] = countOccurrences(str, currentChar); // the inner function
+  }
+  return result;
+}
+console.log(countLetters("ABCCCC")); // I Call my function with this string "ABC"
