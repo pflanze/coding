@@ -176,3 +176,40 @@ do {
 console.log(displayZodiacs(startingZodiac, zodiacs));
 
 // object and method 
+
+
+
+
+// 
+
+function calculate(f){
+    var zodiac={
+    'Capricorn1':{'m':0,'d':20},
+    'Aquarius':{'m':1,'d':19},
+    'Pisces':{'m':2,'d':20},
+    'Aries':{'m':3,'d':20},
+    'Taurus':{'m':4,'d':21},
+    'Gemini':{'m':5,'d':21},
+    'Cancer':{'m':6,'d':22},
+    'Leo':{'m':7,'d':22},
+    'Virgo':{'m':8,'d':23},
+    'Libra':{'m':9,'d':23},
+    'Scorpio':{'m':10,'d':22},
+    'Saggitarius':{'m':11,'d':21},
+    'Capricorn2':{'m':11,'d':31}
+    }
+    var born=f['birthdate'].value;
+    born=born.match(/\//)?born.split('/'):born.split('.');
+    var yyyy=Number(born[2]);
+    var mm=Number(born[1])-1;
+    var dd=Number(born[0]);
+    var bornDate=new Date(yyyy,mm,dd), zodiacEnd, astrologicalSign;
+    for(z in zodiac){
+    zodiacEnd=new Date(yyyy,zodiac[z]['m'],zodiac[z]['d']);
+    if(bornDate<=zodiacEnd){astrologicalSign=z;break}
+    }
+    astrologicalSign.match(/\d/)?astrologicalSign=astrologicalSign.replace(/\d/g,''):null;
+    var spanSign=document.getElementById('sign');
+    spanSign.innerHTML=astrologicalSign;
+    return false
+    }
