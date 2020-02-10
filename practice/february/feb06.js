@@ -168,6 +168,7 @@ keysToValuePairs(person);
 // use var only when i really need to 
 // if javascript doesn't accept the method itself?
 // JSON is an object too
+// to iterate means to loop through 
 
 // develop the code 
 function zodiac1(name, day, month, year) {
