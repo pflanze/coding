@@ -16,3 +16,44 @@ To do so, you have two choices : the array literal [] or the new keyword.
 
 Short syntax : with the array literal notation []
 The array literal notation is simply a comma-separated list of array elements within square brackets. 
+
+The array literal notation is simply a comma-separated list of array elements within square brackets.
+```javascript
+var myArray = [ "Jack", "Sawyer", "John", "Desmond" ];
+```
+
+The content of the array is defined between the opening and the closing brackets, and each value is separated by a comma.
+
+Values are introduced in the same way as simple variables, meaning for example that strings must be declared between quotation marks.
+
+To define a new empty array you just have to use empty brackets :
+```javascript
+var myArray = [];
+```
+
+#### Long syntax : with the Array() constructor
+
+```javascript
+var lostArray = new Array("Jack", "Sawyer", "John", "Desmond" );
+var twinPeaksArray = new Array("Laura", 2, ["Bob", "Leland", "Dale"]);
+```
+
+The new keyword of this syntax asks Javascript to define a new Array, whose items are passed as parameters.
+
+If you know in advance how many elements the array will contain, you can pass the count as a parameter to the constructor, and the array will automatically be created with that number of slots for elements (each element will be initialized with the value undefined) :
+
+var myArray = new Array(80);
+This will create an empty array with 80 slots initialized with the value undefined.
+
+To define a new empty array with no particular number of items you can just initialize a new array with no parameters :
+
+var myArray = new Array(80);
+This will create an empty array with 80 slots initialized with the value undefined.
+
+To define a new empty array with no particular number of items you can just initialize a new array with no parameters :
+
+```javascript
+var myArray = new Array();
+```
+
+#### Access elements of an array

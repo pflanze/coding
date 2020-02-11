@@ -46,9 +46,49 @@ for (let i = 0; i < family.length; i++) {
 family.forEach;
 // nested loops
 // in nested loops we us [j] instead of [i], i stands for index,
-
+// forEach
+family.forEach(arr => arr.forEach(element => console.log(element)));
 //arr.forEach(array => array.forEach)(element)
 
+//  for in
+// for in is getting only the index
+
+console.log("array new");
+for (let innerArray of family) {
+  for (let element of innerArray) {
+    console.log(element);
+  }
+}
 // NESTING OBJECTS
 
 // NESTING AND ACCESSING ObJECTS IN OBJECTS
+const tShirts = {
+  color: "red",
+  size: ["XS", "S", "M", "L", "XL"],
+  countries: {
+    // countries is the object name
+    names: ["China", "Germany"],
+    capital: ["Bejin", "Berlin"], // names and capital are the array's names
+    obj: {
+      one: 3344,
+      two: 5654,
+      printOut: function() {
+        console.log(this.one); // this.one refers to - object
+      }
+    },
+    display: function() {
+      console.log(this.name); // variety of methods inside the object
+      // this.name refers to countries
+    }
+  },
+
+  fabric: "cotton",
+  method: function() {
+    console.log(this.color);
+    // this =>t-shirt
+  }
+};
+console.log(tShirts.size[2]);
+console.log(tShirts.countries.capital[1]); // accessing the second object of the array Berlin
+console.log(tShirts.countries.names[0]);
+console.log(tShirts.countries.obj.two);
