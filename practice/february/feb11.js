@@ -233,3 +233,6 @@ var obj = [
     return { key: key, value: a[key] };
   });
 console.log(array);
+
+//
+//Create a function that takes a string and returns true
