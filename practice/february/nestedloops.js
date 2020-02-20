@@ -43,3 +43,24 @@ for (let i = 0, len = chars.length; i < len; i++) {
 // prompt
 let x = prompt("what??????");
 console.log(x);
+
+// function makeCoffee
+
+// arguments are values
+// parameters are empty boxes or variables waiting to store the data and I can use that data in the execution
+
+function makeCoffee(sugar, milk) {
+  var instructions = "Boil water,"; // "Boil water" is a string
+  instructions += "pur into a cup,";
+  instructions += "add the coffee granules,";
+  instructions += "add " + 0 + " spoons of sugar,"; // the + operator is concatenation but I am not concatenating a string, I am adding in the value,
+  instructions += "add " + milk + "%milk.";
+  return instructions;
+}
+
+//
+// with console.log(I am targeting the console interface) I am logging out the output, the return from the function makeCoffee, which is the string,
+console.log(makeCoffee(2, 20));
+// subroutine i can change the the (2, 20)
+// when i define a subroutine, it is in memory, I haven't executed or performed the task yet;
+//all I do inside the curly brackets is  defining the execution context to run, I am not invoking them

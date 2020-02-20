@@ -1,4 +1,9 @@
+// to understand programming  I need to understand when I use a standard object and when a special
+// type of object as an array;
+// properties describe the object
+
 // Object prototypes
+
 
 function Person(name, age, height) {
   this.name = name;
