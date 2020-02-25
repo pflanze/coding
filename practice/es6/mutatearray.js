@@ -6,7 +6,7 @@
  * prevents reassignment of the variable identifier.
  */
 
-// sample
+// sample 👍
 "use strict";
 const s = [5, 6, 7];
 s = [1, 2, 3]; // throws error, trying to assign a const

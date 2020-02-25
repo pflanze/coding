@@ -1,0 +1,24 @@
+ul li {
+  color: red;
+}
+table {
+  background-color: seagreen;
+}
+th {
+  font-size: 22px;
+}
+td {
+  font-size: 11px;
+}
+#name {
+  color: snow;
+}
+#firstRow {
+  color: yellow;
+}
+.age {
+  color: violet;
+}
+.firstRow {
+  color: #d9212a;
+}
