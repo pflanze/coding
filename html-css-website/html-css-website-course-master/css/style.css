@@ -67,8 +67,8 @@ nav ul li a:hover {
 
 /* styling the footer */
 footer {
-  background: url("./images/sky.jpg");
-  background: #222;
+  background: url("../img/sky.jpg");
+  background-size: cover;
   color: #777;
   padding: 40px;
   text-align: center;
@@ -120,6 +120,7 @@ footer img {
   background: #efefef;
 }
 .site-section-inside {
+  padding-top: 2em;
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
@@ -128,8 +129,8 @@ footer img {
   text-align: center;
   margin-bottom: 30px;
 }
+
 .section-header h2 {
-  font-size: 30px;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 300;
@@ -142,6 +143,9 @@ footer img {
 }
 
 /* Create three columns of equal width */
+.column-container {
+  display: flex;
+}
 .columns {
   float: left;
   width: 33.3%;
