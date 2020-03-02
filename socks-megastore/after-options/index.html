@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Socks Megastore</title>
+    <meta name="description" content="For all your online sock needs">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../images/socks-emoji-purple.png" type="image/png">
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: helvetica, arial, sans-serif;
+      }
+      header {
+        background-color: #605bde;
+        padding: 10px;
+      }
+      header img {
+        height: 1.25em;
+        position: relative;
+        top: 10px;
+        left: -5px;
+      }
+      h1, h2 {
+        text-align: center;
+        color: #fff;
+      }
+      h1 {
+        margin: 0.5em 0;
+        font-size: 1.5em;
+        font-weight: normal;
+      }
+      h2 {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+        font-weight: normal;
+      }
+      main {
+        box-sizing: border-box;
+        padding: 10px 15px 30px 15px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      h3 {
+        font-size: 1.5em;
+      }
+      ul {
+        position: relative;
+      }
+      ul li {
+        margin-bottom: 0.5em;
+      }
+      #socks {
+        width: 100%;
+        max-width: 500px;
+      }
+      #purchase {
+        cursor: pointer;
+        width: 500px;
+        max-width: 100%;
+        background-color: #605bde;
+        padding: 10px;
+        color: #fff;
+        border: 0;
+        font-size: 1.2em;
+        margin-top: 1em;
+        border-radius: 4px;
+      }
+      #purchased {
+        display: none;
+      }
+      footer {
+        padding: 15px;
+        clear: left;
+        margin-top: 0;
+        font-size: 0.8em;
+        color: #aaa;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Socks Megastore</h1>
+    </header>
+    <main>
+
+      <div id="item">
+        <h3>A pair of odd socks</h3>
+
+        <img id="socks" src="../images/samsung-internet-socks-5.jpg" alt="Samsung Internet socks gallery 1"/>
+
+        <h4>Price: &pound;12  &middot;  Shipping: &pound;1.50</h4>
+
+        <p>
+          A pair of odd Samsung Internet socks, in variations of purple.
+        </p>
+
+        <div><button id="purchase">Purchase</button></div>
+      </div>
+      <div id="purchased">
+        <h3>Purchase completed</h3>
+
+        <p>The demonstration purchase is now complete. No information has been exchanged
+          and no money has actually been taken.</p>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>Demo Purposes Only!</p>
+    </footer>
+
+    <script type="text/javascript">
+
+      var purchaseBtn = document.getElementById('purchase');
+      var itemPanel = document.getElementById('item');
+      var purchasedPanel = document.getElementById('purchased');
+
+      function showSuccess() {
+        itemPanel.style.display = 'none';
+        purchasedPanel.style.display = 'block';
+      }
+
+      /**
+       * Here is where we would send the payment info to the server / payment gateway for processing,
+       * but I'm not quite ready to take real money from you yet 😉 Simulating by just waiting 2 secs.
+       */
+      function processPaymentDetails(uiResult) {
+        return new Promise(function (resolve) {
+          setTimeout(function() {
+            resolve(uiResult);
+          }, 2000);
+        });
+      }
+
+      /**
+       * Configuration for our payment. Notes:
+       *   - basic-card: We're taking a card payment. Proprietary methods, defined by URL, are becoming available too.
+       *   - it will default to allowing any card network, but it's possible to define supported networks.
+       *   - More info: https://developers.google.com/web/fundamentals/discovery-and-monetization/payment-request/deep-dive-into-payment-request#paymentrequest_constructor
+       */
+      var methodData = [{
+        supportedMethods: 'basic-card'
+      }];
+
+      var details = {
+        displayItems: [
+          {
+            label: 'Socks',
+            amount: {currency: 'GBP', value: '12.00'}
+          },
+          {
+            label: 'Loyalty discount',
+            amount: {currency: 'GBP', value: '-1.00'}
+          }
+        ],
+        total: {label: 'Total', amount: {currency: 'GBP', value: '11.00'}},
+        // If you include requestShipping then you need at least one shipping option
+        // NB. If you have multiple options you can handle the selection by adding a
+        // 'shippingoptionchange' event handler
+        shippingOptions: [
+          {
+            id: 'standard',
+            label: 'Standard shipping',
+            amount: {currency: 'GBP', value: '1.50'},
+            selected: true
+          }
+        ]
+      };
+      var options = {
+        requestPayerName: true,
+        requestPayerEmail: true,
+        requestPayerPhone: true,
+        requestShipping: true
+      };
+
+      var paymentRequest;
+
+      function onClickPurchase() {
+
+        paymentRequest.show()
+          .then(function(uiResult) {
+            processPaymentDetails(uiResult)
+              .then(function(uiResult) {
+                console.log('Success');
+                uiResult.complete('success');
+                showSuccess();
+              });
+          })
+          .catch(function(error) {
+            console.warn('Unable to complete purchase', error);
+            alert('Unable to complete the demo purchase: ' + error);
+          });
+
+      }
+
+      if (window.PaymentRequest) {
+
+        // Set up Payment Request
+
+        paymentRequest = new PaymentRequest(methodData, details, options);
+
+        purchaseBtn.addEventListener('click', onClickPurchase);
+
+        paymentRequest.addEventListener('shippingaddresschange', function(evt) {
+          // Omitting further features for this demo, but we could check e.g.
+          // changes to delivery costs, due to the shipping address changing here.
+          console.log('Shipping address changed', evt);
+          evt.updateWith(details);
+        });
+
+      } else {
+        console.error('Alas! This browser does not support the Payment Request API. ' +
+          'Another method should be provided here.');
+      }
+    </script>
+
+  </body>
+</html>
