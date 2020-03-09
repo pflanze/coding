@@ -1,0 +1,40 @@
+/*font-link*, when we have the font downloaded on my machine*/
+@font-face {
+  font-family: "Josefin Sens";
+  url: ../fonts;
+}
+h1 {
+  font-family: "Josefin Sens", sans-serif;
+}
+/*CSS measurnments - em and rem units*/
+/*font size*/
+/*the parent element for the div is the root*/
+div {
+  font-size: 20px;
+}
+/*using em and rem units*/
+/*paragraph is the child element for the div*/
+/*em has to do with the parent and rem has to to with the */
+
+/*2em *20px we multiply */
+/*em is borrowed from the typography world, and it’s a unit 
+that allows setting the font-size of an element relative 
+to the font-size of its parent.*/
+
+p {
+  font-size: 2em; /*em looks what is the value of my parent element*/
+}
+
+/*by using the rem unit, the values of parent elements are ignored,
+ and only the value of the root is taken into consideration.*/
+
+/*em units for the font-size property will be relative 
+to the font-size of the parent element. em units on other 
+properties than font-size will be relative to the font-size of 
+the current element. rem units sizes will always be relative to 
+the font-size of the root html element.*/
+
+/*Like ems, rems are a scalable CSS unit but are more robust and predictable. 
+Introduced as part of CSS3, rems (“root em”) are relative to the root 
+(the <html> element) rather than the parent. This instantly makes life
+ much simpler.*/
