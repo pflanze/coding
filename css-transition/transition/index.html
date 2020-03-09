@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css"> 
+    </head>
+    <body>
+        <button class="button">Mouse over me</button>
+
+        <div id="intro-block">
+            <h1>CSS Transitions</h1>
+            <p>Why transitions?</p>
+            <ul>
+              <li>There's a basic common set of interactions designers want to be able to control without writing Javascript</li>
+              <li>These are simple but core interactions like changing colors and size when a mouse is hovering over something, to having elements fade in and out (as opposed to a jaring single frame movement)</li>
+              <li>Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. </li>
+              <li>This is part of the idea of putting as much functionality into CSS as possible.</li>
+              <li>Remember, load as much into your HTML as you can, then pass the buck to your CSS, and finally use JS as a last resort (a highly common last resort)</li>
+              <li> Big Picture: There are transitions, transforms and animations - All three combine help make content come ALIVE! In ways that visual styling and display/position/float can't</li>
+              <li> Your pages are now dynamic, MOVING things</li>
+            </ul>
+            <p id="toc"> Cut the fat, you need to know: </p>
+            <ol>
+              <li><a href="#one">The transition property</a></li>
+              <li><a href="#two">Transition property short-hand and long-hand</a></li>
+              <li><a href="#three">What properties can be transitioned</a></li>
+              <li><a href="#four">When transitions end</a></li>
+            </ol>
+            <p> Demonstrate Learning: </p>
+            <p><a href="#exercise">EXERCISE: A transition library</a></p>
+            <p><a href="#exercise-two">EXERCISE: A moving form label</a></p>
+          </div>
+          
+          <div id="one">
+            <h2> The transition property </h2>
+            <p> This property is what makes transitions possible, it has four aspects to it:</p>
+            <p> transition: [property], [duration], [timing-function], [delay];</p>
+            <p> All four aren't necessary, but the first three are the most popular</p>
+            <p> Let's just use a transition for a new background for our classic box</p>
+            <!-- ex 1 -->
+            <div class="box new-background"></div> 
+            
+            <p> So if we look at the css for example 1, we have two "states" for the class, it's normal static position state, and the second is when a mouse hovers over it. </p>
+            
+            <!-- ex 2 -->
+            <p> Let's now add a second state, when it's active (being clicked and held on), now we'll explore the interplay of two transitions </p>
+            
+            <div class="box click-and-hovered"></div>
+            
+            <!-- ex 3 -->
+            
+            <p> Let's do one little experiment, and notice that the cascade position matters here... </p>
+            
+            <div class="box cascade-matters"></div>
+            
+            <p> Notice no matter how much you click, this one never turns pink? Because when it's active it is being hovered over as well. </p>
+            
+            <!-- ex 4 -->
+            
+            <p> Finally of course, we can transition other properties as well, perhaps most powerfully, we can transition the offset properties we get from position: relative/absolute/fixed </p>
+            
+            <div class="box transition-left-offset"></div>
+            
+            <!-- ex 5 -->
+            <p> Let's not beat around the bush, let's do one of the most common effects, let's animate box-shadow when something is hovered over</p>
+            
+            <div class="box box-shadow-transition"></div>
+            
+            <!-- ex 6 -->
+            <p> Let's combine that with an active one to give us a tactile click effect</p>
+            
+            <div class="box box-shadow-and-click">Click!</div>
+            
+            <p> Notice how we used box-shadow and position: relative and top: 0 -> 4px to get a common click effect? This is an example of us using our base CSS knowledge to do more ambition things!</p>
+          </div>
+          
+          <div id="two">
+            <h2>Transition property short-hand and long-hand</h2>
+            <p>If you'll notice, in the prior examples we used transition property short-hand CSS, we can also define each property individually</p>
+            
+            <!-- ex 7 -->
+            <div class="box longhand-definition">ex 7</div>
+            
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions#When_property_value_lists_are_of_different_lengths">Let's explore when property value lists are of different lenghts</a><p>
+            
+            <!-- ex 8 -->
+            <p>If we want all transitions to occur with the same duration, timing-function and delay, we can short-hand it into one line via the "all" transition-property, this will transition all 'transitionable properties' at the same duration, timing and delay</p>
+            <div class="box shorthand-definition">ex 8</div>
+          </div>
+          
+          <div id="three">
+            <h2>What properties can be transitioned</h2>
+            <p> Only certain properites can be transitioned, and the idea is simple:</p>
+            <p><em>A property can be transitioned if it has a definable 'middle' point </em></p>
+            <p> This is why a left: 0 -> left: 100px can be transitioned, we know it's middle point of 50px;</p>
+            <p> But this is why we can't transition position: relative -> position: static, what does the middle point look like?</p>
+            <p>Another thing that will animate inconsistently is the "auto" property, so going from margin: 10px 10px -> margin: 10px auto might be buggy in some browsers</p>
+            <p>Transitionable properties:</p>
+            <ul>
+              <li>background-color</li>
+              <li>background-position</li>
+              <li>border-color</li>
+              <li>border-width</li>
+              <li>border-spacing</li>
+              <li>bottom</li>
+              <li>clip</li>
+              <li>color</li>
+              <li>crop</li>
+              <li>font-size</li>
+              <li>font-weight</li>
+              <li>height</li>
+              </li>left</li> 
+              <li>letter-spacing</li> 
+              <li> and so much more... line-height; margin; max-height; max-width; min-height; min-width; opacity; outline-color; outline-offset; outline-width; padding; right; text-indent; text-shadow; top; vertical-align; visibility; width; word-spacing; </li>
+          </div>
+          
+          <div id="four">
+            <h2>When transitions end</h2>
+            <p>I want to plant a seed now for when we start talking about Javascript...</p>
+            <p>How can we hook into when a transition ends so we can do more stuff with Javascript?</p>
+            <p>We often code up the concept of "events" in our browser, the idea is that we write code for when certain events happen </p>
+            <p>:hover, :active, :focus can be thought of as three events, and via CSS we tie behavior to them (changing properties)</p>
+            <p>But we want a much bigger list, so keep in mind that when transitions finish running, the browser emits an event called "transitioned"</p>
+            <p>We'll write pseudo-code as such:</p>
+            <pre><code> 
+              function tellMeTransitionIsDone() {
+                when: #coolDiv.is.transitioned
+                do: alert('div is done!),
+                do: getDivContents
+                do: sendDivContentsToServer
+              }
+            </code></pre>
+            <p> This is just pseudo-code, it's not properly written JS, it will break if you try and run it, but it conveys the idea.</p>
+          
+          <div id="exercise">
+            <h2> EXERCISE: A transition library</h2>
+            <p>Time for an in-class exercise, let's make a transition library! </p>
+            <p>Requirements:</p>
+            <ol>
+              <li>Make a standard block out of a div tag, it should be about 100 by 100px</li>
+              <li>put 10 of these on the page, and give each one a unique transition</li>
+              <li>utilize all the CSS pseudo-class states of :hover, :active, :focus, :target at least once</li>
+              <li> Serve the page via your node server, and then we'll view them, coolest transitions wins!</li>
+            </ol>
+            <p>Hints:</p>
+            <ol>
+              <li>Some HTML elements are more suited to some transitions than others, for instance a p tag might be best for a letter-spacing transition, maybe on hover it gets more readable?</li>
+              <li>Use form elements for the :focus pseudo-class, it's the most common use case, maybe on focus a text input gets bigger and bolder?</li>
+            </ol>
+          </div>
+            
+          <div id="exercise-two">
+            <h2> EXERCISE: A moving form label</h2>
+            <p>Let's make a text inputs form label move above it when it's in focus </p>
+            <p>Requirements:</p>
+            <ol>
+              <li>make a label element and an input element</li>
+              <li>position the label over the form input </li>
+              <li>on :focus of the input element the label should slide up above the input</li>
+            </ol>
+            <p>Hints:</p>
+            <ol>
+              <li>Use the general sibling CSS3 selector + to target input:focus and the label element</li>
+              <li>the transition should be on the label</li>
+              <li>You'll need to use both display and position properties on the input and label elements</li>
+              <li>If the lable is preventing the input from being clicked, play with it's z-index and the background-color of the input (transparent is a background-color!)</li>
+            </ol>
+          </div>
+            
+            <input id="exercise" type="text" />
+            <label for="exercise-input">I should move on focus!</label>
+            
+            <!-- exercise 3, here I change width -->
+            <input id="exercise-three" type="text" placeholder="password dude!"/>
+            <div class="ex3-cover"></div>
+            
+
+            <div class='transition'>
+                <p id='transition'>CSS3</p>
+              </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

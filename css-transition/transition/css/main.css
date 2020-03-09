@@ -1,0 +1,186 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-size: 3em;
+  font-family: inherit;
+  border: none;
+  background-color: #33ae74;
+  padding: 0.5em 0.75em;
+  transition: background-color 0.5s ease-out;
+}
+
+.button:hover {
+  background-color: #1ce;
+}
+
+body {
+  margin: 10px;
+}
+
+/* ex 1 */
+.new-background {
+  transition: background-color, 2s;
+}
+
+.new-background:hover {
+  background-color: pink;
+}
+
+/* ex 2 */
+.click-and-hovered {
+  transition: background-color, 2s;
+}
+.click-and-hovered:hover {
+  background-color: green;
+}
+.click-and-hovered:active {
+  background-color: pink;
+}
+
+/* ex 3 */
+.cascade-matters {
+  transition: background-color, 2s;
+}
+.cascade-matters:active {
+  background-color: pink;
+}
+.cascade-matters:hover {
+  background-color: green;
+}
+
+/* ex 4 */
+.transition-left-offset {
+  position: relative;
+  transition: background-color 2s, left 0.5s;
+  left: 0;
+}
+.transition-left-offset:hover {
+  left: 100px;
+  background-color: pink;
+}
+
+/* ex 5 */
+.box-shadow-transition {
+  transition: box-shadow, 2s;
+}
+
+.box-shadow-transition:hover {
+  box-shadow: 0px 4px 8px 0 #333;
+}
+
+/* ex 6 */
+.box-shadow-and-click {
+  transition: all 0.5s;
+  position: relative;
+  box-shadow: 0 0 0 0 #333;
+  top: 0;
+}
+.box-shadow-and-click:hover {
+  box-shadow: 0px 4px 8px 0 #333;
+}
+.box-shadow-and-click:active {
+  box-shadow: 0 0px 4px 0 #333;
+  top: 4px;
+}
+
+/* ex 7 - longhand definitions */
+
+.longhand-definition {
+  transition-property: background-color, left, opacity;
+  transition-duration: 2s, 1s, 1s;
+  transition-timing-function: ease, linear, ease;
+  transition-delay: 0, 0, 5s;
+
+  position: relative;
+  opacity: 1;
+  left: 0;
+}
+.longhand-definition:hover {
+  left: 50px;
+  background-color: red;
+  opacity: 0.1;
+}
+
+/* ex 8 */
+.shorthand-definition {
+  transition: all 2s ease 1s;
+}
+.shorthand-definition:hover {
+  background-color: orange;
+  border-radius: 100px;
+}
+
+/* exercise 2 - moving form label */
+label,
+input {
+  display: block;
+  padding: 5px;
+}
+input {
+  width: 200px;
+  background-color: transparent;
+}
+label {
+  display: inline-block;
+  position: relative;
+  bottom: 1.6em;
+  color: #999;
+  transition: all 0.1s;
+  z-index: -1;
+}
+input:focus + label {
+  color: #000;
+  bottom: 0;
+  font-size: 12px;
+  color: green;
+}
+
+/* exercise 3 */
+#exercise-three ~ .ex3-cover {
+  height: 3px;
+  background: linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+  width: 0px;
+  transition: all 1s;
+}
+
+#exercise-three:focus + .ex3-cover {
+  width: 214px;
+}
+#exercise-three:focus {
+  outline: 0;
+}
+
+.transition {
+  width: 80px;
+  height: 60px;
+  background: #6fac21;
+  opacity: 0.8;
+  border-radius: 10px;
+  transition: all 2s linear;
+  margin: 50px 50px;
+}
+
+#transition {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 60px;
+  transition: all 2s;
+}
+
+.transition:hover {
+  transform: scale(2) rotate(360deg);
+  -webkit-transform: scale(2) rotate(360deg); /* Safari and Chrome */
+  -mos-transform: scale(2) rotate(360deg);
+  -o-transform: scale(2) rotate(360deg);
+  -ms-transfoem: scale(2) rotate(360deg);
+  /*width: 160px;
+    height: 120px;*/
+  background: #1ec7e6;
+  opacity: 0.8;
+}
