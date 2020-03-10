@@ -1,0 +1,106 @@
+/*flex box
+*/
+/*the general rule for html is to render the page*/
+
+/* flex-box */
+/* flex-direction */
+.daddy {
+  width: 100vw;
+  height: 100vh;
+  display: flex; /* */
+  flex-direction: row; /* we can have raw, column, reverse*/
+  justify-content: flex-end; /* or space-around, space-evenly, space-*/
+  align-items: center; /*streched, will work only if i do not have a heignt fixed for the box, */
+  /*align-items: center; */
+  /**display, flex-direction, justify-content and align-items goes together */
+  flex-wrap: wrap;
+  /* align-content: flex-end; /*center*/
+  flex-flow: column-reverse wrap; /*flex-flow: row;*/
+  /*column-reverse is direction and wrap*/
+  /*flex-direction and flex-wrap are combined with flex-row*/
+}
+.child1 {
+  background-color: red;
+  width: 500px;
+  height: 250px;
+  align-self: flex-start;
+  order: 4;
+  /*order: 1; */
+  flex: 2; /*double the size of the box; flex: 3; will triple the size of the box*/
+  flex: 1 1 22%; /* it equal to flex-grow, flex shrink, flex-basis, they are united*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.child2 {
+  background-color: yellow;
+  width: 250px;
+  height: 250px;
+  order: 2;
+  flex: 1 1 22%; /*it depends how big I want the box so I change the numbers*/
+  /*flex-basis: is equal to min-width */
+}
+.child3 {
+  background-color: green;
+  width: 250px;
+  height: 250px;
+  order: 3;
+}
+.baby4 {
+  background-color: blueviolet;
+  width: 250px;
+  height: 250px;
+  /*order: 3; */
+  order: 4;
+}
+
+.page-layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.nav {
+  width: 25%;
+}
+
+.main {
+  display: flex;
+  background-color: purple;
+  flex-direction: row;
+}
+
+.section {
+  border: 2px solid black;
+}
+
+.text-one {
+  flex: 2;
+}
+/* flex-wrap */
+
+/* flex-flow */
+
+/* justify-content */
+
+/* algin-items */
+
+/* align-content */
+
+/* vertical-align */
+
+/* visibility */
+
+/* more var */
+
+/* z-index */
+
+/* linear-gradient */
+
+/* radialGradient */
+
+/* transform - rotate()*/
+/* transform - rotateX(),rotateY(),rotateZ()*/
+/* transition */
+
+/* border-image */
