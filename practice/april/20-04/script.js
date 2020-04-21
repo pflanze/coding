@@ -38,3 +38,13 @@ function change() {
   console.log(newBox);
   newBox.style.backgroundColor = "red";
 }
+const multiply = () => {
+  let userNum = document.querySelector("#num").value;
+  //   console.log(userNum);
+  let x = "";
+  for (let i = 0; i <= 10; i++) {
+    x += `${i} * ${userNum} = ${i * userNum} <br>`;
+  }
+  document.querySelector(".result").innerHTML = x;
+  console.log();
+};
