@@ -7,11 +7,11 @@
 
 #### SCREENSHOT
 
-![alt text](Screenshot-1.png)
+![alt text](screenshot-1.png)
 
 #### SCREENSHOT
 
-![alt text](Screenshot-2.png)
+![alt text](screenshot-2.png)
 
 #### SCREENSHOT
 
