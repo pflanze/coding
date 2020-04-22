@@ -1,3 +1,18 @@
-# A simple to do list in a pure vanilla javascript
+### DCI Assignment ToDo List
 
-[DEMO PAGE HERE, I hope you like :)](http://expalmer.github.io/todo-list-vanilla-js/)
+### A simple ToDo list in vanilla javascript
+
+
+
+
+#### SCREENSHOT
+
+![alt text](Screenshot-1.png)
+
+#### SCREENSHOT
+
+![alt text](Screenshot-2.png)
+
+#### SCREENSHOT
+
+![alt text](Screenshot-3.png)

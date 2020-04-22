@@ -2,7 +2,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -13,7 +15,7 @@ body {
   font-size: 100%;
   font-family: 'Roboto Slab', serif;
   color: #fff;
-  background: linear-gradient(to right, #26232C 0%,#26232C 40%,#26232C 100%);
+  background: linear-gradient(to right, rgb(20, 43, 170) 0%, rgb(12, 43, 128) 40%, rgb(60, 22, 134) 100%);
 }
 
 ::-webkit-input-placeholder {
@@ -44,9 +46,11 @@ a {
   content: "";
   display: table;
 }
+
 .row:after {
   clear: both;
 }
+
 .row {
   zoom: 1;
 }
@@ -66,9 +70,9 @@ a {
 .insert {
   position: relative;
   padding: 30px;
-  border-top: solid 1px #3B3841;
+  border-top: solid 1px rgb(22, 20, 155);
   overflow: hidden;
-  background: #322F39;
+  background: rgb(36, 3, 3);
 }
 
 #js-insert {
@@ -82,7 +86,7 @@ a {
   font-size: 23px;
   font-family: inherit;
   color: #fff;
-  background: #322F39;
+  background: rgb(39, 137, 202);
 }
 
 #js-toggle-all {
@@ -92,11 +96,11 @@ a {
 }
 
 .bar {
-  color: #6C6777;
+  color: rgb(18, 92, 161);
   background: #eee;
   border-top: solid 1px #ddd;
   border-bottom: solid 1px #ddd;
-  box-shadow: inset 0 0 16px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
 .info {
@@ -157,7 +161,7 @@ a {
 
 .list {
   position: relative;
-  background: #25222B;
+  background: rgb(4, 104, 150);
 }
 
 .list:before {
@@ -223,6 +227,7 @@ a {
     border-radius: 20px;
     box-shadow: inset 0 0 3px #2B2831;
   }
+
   100% {
     height: 14px;
     width: 20px;
@@ -242,6 +247,7 @@ a {
     border-left: solid 4px #7ED180;
     border-bottom: solid 4px #7ED180;
   }
+
   100% {
     width: 24px;
     height: 24px;
@@ -268,7 +274,7 @@ a {
   margin-bottom: 11px;
   border: none;
   outline: none;
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
   z-index: 9;
 }
 
@@ -281,6 +287,7 @@ a {
     opacity: 0;
     width: 0%;
   }
+
   100% {
     opacity: 1;
     width: 100%;
@@ -321,7 +328,7 @@ a {
 }
 
 .list li:hover .destroy:before,
-.list li:hover .destroy:after  {
+.list li:hover .destroy:after {
   opacity: 1;
   height: 25px;
 }
