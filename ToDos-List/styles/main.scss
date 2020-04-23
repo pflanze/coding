@@ -1,0 +1,237 @@
+
+//              Variables
+// =====================================
+
+// Fonts
+$teko: "Teko", sans-serif;
+$opensans: "Open Sans", sans-serif;
+$bitter: "Bitter", serif;
+
+// Font colors
+$heading-color: rgb(255, 72, 72);
+
+
+// Font sizes
+$heading-size: 80px;
+$task-size: 25px;
+$todo-item-size: 20px;
+
+// Background colors
+$todo-bkg-color: rgb(255, 251, 255);
+//=======================================
+
+$footer-height: 90px;
+
+
+//      Resets
+//====================================
+
+html {
+  height: 100%;
+}
+
+h1 {
+  font-size: $heading-size;
+}
+
+h2 {
+  font-size: $heading-size * .8;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  color: rgb(210, 208, 204);
+  font-family: $bitter;
+  font-size: $task-size;
+}
+
+input {
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+//================================
+
+// ====================================================
+//        Mixins
+//=================================================
+
+@mixin breakpoint($point) {
+  @if $point == laptop {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 800px) {
+      @content;
+    }
+  }
+}
+
+// =======  END OF Mixins ==========================
+
+
+body {
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(tablet) {
+    font-size: .8em;
+  }
+
+  header {
+    color: $heading-color;
+    font-family: $teko;
+
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 90%;
+
+    @include breakpoint(laptop) {
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+  }
+
+  main {
+    font-family: $bitter;
+    font-size: $task-size;
+    margin: 0 auto;
+    overflow: auto;
+    padding-bottom: $footer-height * 2;
+    width: 90%;
+
+    @include breakpoint(laptop) {
+      width: 100%;
+    }
+
+
+    .todo-main {
+      background-color: $todo-bkg-color;
+      box-shadow: 0 0 100px -1px rgba($heading-color, .3);
+      margin: 0 auto;
+
+      width: 60%;
+
+      @include breakpoint(laptop) {
+        width: 70%;
+      }
+
+      @include breakpoint(tablet) {
+        width: 90%;
+      }
+    }
+
+    header p {
+      font-size: $task-size + 5px;
+    }
+  }
+}
+
+.wrap {
+  min-height: 100%;
+}
+
+
+.todo-item {
+
+  box-shadow: 0 0 20px -10px darken($heading-color, 1.2);
+
+  height: 100%;
+  margin-bottom: 3px;
+  transition: box-shadow .4s;
+  width: 100%;
+
+  &:not(:first-child) {
+    //border-top: 2px solid rgb(255, 255, 255);
+    font-size: $todo-item-size;
+  }
+
+  .flex-container {
+    align-content: baseline;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 20px;
+  }
+
+
+  .input-container {
+    //margin: 20px auto;
+    display: inline-block;
+    margin: 0 7px;
+    width: 100%;
+  }
+
+  input {
+    background-color: $todo-bkg-color;
+    border-bottom: 2px solid rgba(211, 211, 211, .2);
+    font-family: $bitter;
+    font-size: $task-size;
+
+    height: 90%;
+    padding: 2px 1%;
+    transition: border-bottom .5s;
+    width: 100%;
+
+    &:focus,
+    &:hover {
+      border-bottom: 2px solid rgba(211, 211, 211, .9);
+      outline: none;
+
+    }
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 30px -8px darken($heading-color, 1.2);
+
+    .todo-options {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .delete-icon {
+      opacity: 1;
+    }
+  }
+}
+
+
+@import 'todo';
+@import 'custom_select';
+
+
+footer {
+  background-color: $heading-color;
+  bottom: 0;
+  clear: both;
+  color: rgb(255, 245, 245);
+  display: flex;
+  font-family: $opensans;
+  font-size: 15px;
+  font-weight: 600;
+  height: $footer-height;
+  justify-content: center;
+  left: 0;
+  margin-top: -$footer-height;
+  position: relative;
+  width: 100%;
+
+  p {
+    margin-left: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.footer-content {
+  margin: auto 20px;
+  width: 100%;
+}

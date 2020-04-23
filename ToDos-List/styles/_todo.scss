@@ -1,0 +1,80 @@
+.todo-task {
+  font-size: $task-size;
+  line-height: 1.2em;
+  margin: auto 10px;
+  width: 80%;
+}
+
+.due-text {
+  display: inline-block;
+  font-size: $task-size;
+  font-style: normal;
+  margin: auto 10px;
+  vertical-align: middle;
+}
+
+.todo-options {
+  display: inline-block;
+
+  transition: opacity .7s;
+
+  ul {
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: 2%;
+    margin-top: 2%;
+    width: 90%;
+  }
+
+  li {
+    display: inline;
+    margin-right: 25px;
+  }
+}
+
+.button-wrapper {
+  border: 0;
+  padding: 10px 20px;
+
+  &:focus {
+    outline: none;
+  }
+
+
+;
+}
+
+.button {
+  $button-size: 30px;
+
+  height: $button-size;
+
+  transition: transform .2s;
+  width: $button-size;
+
+  &:active {
+    transform: scale(.8);
+  }
+}
+
+.delete-icon {
+  fill: rgb(255, 0, 41);
+  opacity: .05;
+  transition: opacity .5s;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation-duration: .6s;
+  animation-name: zoomIn;
+}

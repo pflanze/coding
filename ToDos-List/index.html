@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList: Never forget a task! </title>
+
+
+    <!-- ------ Fonts ---------- -->
+    <link async href="https://fonts.googleapis.com/css?family=Teko:500" rel="stylesheet">
+    <link async href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link async href="https://fonts.googleapis.com/css?family=Bitter:400,600,800" rel="stylesheet">
+
+    <!-- ------ Styles --------------->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+
+    <!-- ------ Todos ---------------->
+    <!-- Todo 1. Use the local storage API to store todos locally.  -->
+
+
+    <!-- ------ Templates ------------>
+    <template id="todo">
+        <div class="todo-item zoom-in" data-todo-num="">
+            <div class="flex-container">
+                <p class="todo-task"></p>
+
+                <span class="due-text">due</span>
+
+                <div class="dropdown">
+                    <span class="default-item">today</span>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li class="dropdown-item">today</li>
+                            <li class="dropdown-item">tomorrow</li>
+                            <li class="dropdown-item">next week</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="button-wrapper">
+                    <svg class="button delete-icon">
+                        <use xlink:href="images/icons.svg#deleteTodo"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="input">
+        <div class="input-container">
+            <input type="text" placeholder="Add the todo here" id="todo-adder" tabindex="1" />
+        </div>
+    </template>
+
+    <template id="addButton">
+        <div class="button-wrapper" tabindex="6">
+            <svg class="button" id="add-button">
+                <use xlink:href="images/icons.svg#addTodo"></use>
+            </svg>
+        </div>
+    </template>
+
+
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1> MyToDo List </h1>
+        </header>
+
+        <main>
+
+
+            <article class="todo-main"></article>
+        </main>
+    </div>
+
+    <!-- <footer>
+        <div class="footer-content">
+
+        </div>
+    </footer> -->
+
+    <!-- ------ Scripts -------------->
+    <script src="js/todo.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
