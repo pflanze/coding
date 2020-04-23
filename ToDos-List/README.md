@@ -1,4 +1,4 @@
-# DCI  JavaScript DOM Exercise - DoToDo List
+# DCI  JavaScript DOM Exercise - ToDos List
 
 ## Tech 
 - vanilla JS. 
@@ -7,7 +7,9 @@
 - SCSS
 
 ## Screenshot
+![alt text](screenshot-1.png)
 
+![alt text](screenshot-2.png)
 
 
 
