@@ -1,0 +1,11 @@
+{
+  "name": "recipe-app",
+  "version": "1.0.0",
+  "description": "html,css and javascript with built-in sass support",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Irena Popova",
+  "license": "ISC"
+}
