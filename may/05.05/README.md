@@ -84,13 +84,78 @@ promise.then(result1Callback).then(result2Callback).catch(reject1Callback);
 t.then(result3Callback).catch(reject2Callback);
 ```
 
+### Compare Callback with Promise
+
 the point of using promise is not to use callbacks
 
+### Callback example
+
 ```javascript
-function watchMoviePromise() {
-  return new Promise((resolve, reject)=>{
-    if u
+function watchMovieCallback(callback, errorCallback) {
+  let userLeft = false;
+  let userWatchingMovie = false;
+
+  if (userLeft) {
+    errorCallback({
+      name: "User Left",
+      message: ":(",
+    });
+  } else if (userWatchingMovie) {
+    errorCallback({
+      name: "User Watching Movie",
+      message: "WebDevSimplified < Movie",
+    });
+  } else {
+    callback("Thumbs up and Subscribe");
   }
 }
 
+watchMovieCallback(
+  (message) => {
+    console.log(message);
+  },
+  (error) => {
+    console.log(error.name + " " + error.message);
+  }
+);
 ```
+
+### Promise example
+
+```javascript
+
+function watchMoviePromise() {
+  let userLeft = false
+  let userWatchingCatMeme = false
+  return new Promise((resolve, reject) => {
+    if (userLeft) {
+      reject({
+        name: 'User Left',
+        message: ':('
+      })
+    } else if (userWatchingCatMeme) {
+      reject({
+        name: 'User Watching Movie',
+        message: 'WebDevSimplified < Movie'
+      })
+    } else {
+      resolve('Thumbs up and Subscribe')
+    }
+  })
+}
+}
+
+watchMoviePromise().then(message => {
+  console.log(message)
+}).catch(error => {
+  console.log(error.name + ' ' + error.message)
+})
+
+const recordMovieOne = new Promise((resolve, reject) => {
+  resolve('Movie 1 Watched')
+})
+
+
+```
+
+### Promises are made immediately but they do not resolve until they are ready.
