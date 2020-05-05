@@ -48,13 +48,12 @@ Change in this context refers to identity (===) comparison. An object may be use
 Every promise must supply a .then() method
 
 ```javascript
-//js promise 
+//js promise
 let p = new Promise(function (resolve, reject) { ... } );
 
 ```
 
 ```javascript
-
 let p = new Promise((resolve, reject) => {
   let a = 1 + 1;
   if (a == 2) {
@@ -65,8 +64,10 @@ let p = new Promise((resolve, reject) => {
 });
 
 p.then((message) => {
-  console.log("This is in then " + message);
-}).catch;
+  console.log("This is in then " + message)
+}).catch((message =>{
+  console.log('This is in the catch' + message)
+});
 ```
 
 Promise is an object that allows one piece of code that waits for an asynchronous execution result (I call it Promise client) to communicate with the other piece of code that produces this result (I call it Promise provider).
@@ -78,5 +79,18 @@ The line above is non-blocking; it returns control immediately and execution con
 
 The result data passed to the resultCallback can in turn be a Promise, which means that you can create chains of the .then().catch() calls:
 
-promise.then(result1Callback).then(result2Callback).catch(reject1Callback)
-t.then(result3Callback).catch(reject2Callback)
+```javascript
+promise.then(result1Callback).then(result2Callback).catch(reject1Callback);
+t.then(result3Callback).catch(reject2Callback);
+```
+
+the point of using promise is not to use callbacks
+
+```javascript
+function watchMoviePromise() {
+  return new Promise((resolve, reject)=>{
+    if u
+  }
+}
+
+```
