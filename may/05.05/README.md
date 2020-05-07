@@ -126,20 +126,20 @@ watchMovieCallback(
 
 function watchMoviePromise() {
   let userLeft = false
-  let userWatchingCatMeme = false
+  let userWatchingMovie = false
   return new Promise((resolve, reject) => {
     if (userLeft) {
       reject({
         name: 'User Left',
         message: ':('
       })
-    } else if (userWatchingCatMeme) {
+    } else if (userWatchingMovie) {
       reject({
         name: 'User Watching Movie',
-        message: 'WebDevSimplified < Movie'
+        message: ' < Movie'
       })
     } else {
-      resolve('Thumbs up and Subscribe')
+      resolve('Subscribe')
     }
   })
 }
@@ -158,4 +158,14 @@ const recordMovieOne = new Promise((resolve, reject) => {
 
 ```
 
-### Promises are made immediately but they do not resolve until they are ready.
+#### Promises are made immediately but they do not resolve until they are ready.
+
+let promise = new Promise(function(resolve, reject) {
+setTimeout(function() {
+resolve('hello world');
+}, );
+});
+
+promise.then(function(data) {
+console.log(data);
+});
