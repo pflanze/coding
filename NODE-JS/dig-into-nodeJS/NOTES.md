@@ -35,3 +35,6 @@ console.log is not in the JavaScript spec. There is a second spec for console, b
 
 JavaScript is agnostic to I/O. And this one of the reasons JS to be so successfull because it is much easier to adapt to other environments. The language does not make many assumptions about how communication is going to happen.  It is up to the environment to decide. 
 
+In the browser is not a POSEX environment, because I am not dealing with processes, and process IDs, simply need to console.log and it is running in the browser, the browser choose to expose it in a different way, It's just a direct connection over the dev tools.
+And that is a difference based on the hosting environment exposing the I/O. 
+
