@@ -4,7 +4,14 @@
 // How can I get information out?
 
 // How this can be printed to the screen with node?
+
 // console.log("Hello World");
+// console.error("Oooops");
+
+// file descriptors 
+// node ex1.js 1>/dev/null - redirecting outputs in different log files
+// node ex1.js 2>/dev/null
+
 // How node connects to the environment around it?
 // #!/usr/bin / env node
 
@@ -15,14 +22,18 @@
 // accsessing the output streams
 process.stdout.write("Hello World\n");
 
+// process.stdin.read()
+// #!
+// - \n - a character s
+
 //!  streams are an actual kind of Data structure
 
 //! If I want to write a content to a stream i call .write method
 
 // console.log is a wrapper around process.stdout.write that throws on a trailing new line, bit console.log is doing many other things beside simply calling process.stdout.write. It is kind of equivalent of if putting a trailing newline in the output, before sending out. the whole point of Node using the asynchronous I/O model is that I/O can happen as efficiently as possible. 
 
-
-/* "use strict";
+// always run "use strict" mode
+"use strict";
 
 var path = require("path");
 var fs = require("fs");
@@ -32,4 +43,4 @@ var getStdin = require("get-stdin");
 var args = require("minimist")(process.argv.slice(2), {
   boolean: ["help", "in",],
   string: ["file",],
-}); */
+}); 
