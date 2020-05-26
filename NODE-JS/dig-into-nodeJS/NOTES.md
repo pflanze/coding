@@ -20,6 +20,10 @@ Have to understand a standard for I/O and system integration, and system-level-t
 
 #### What is a Standard I/O ?
 
+In computer programming, standard streams are preconnected input and output communication channels between a computer program and its environment when it begins execution. The three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).
+
+By convention, UNIX assigns the file numbers 0, 1, and 2 to the standard input, output, and error streams. Some programs use UNIX style I/O with these file numbers in place of standard I/O to stdin , stdout , and stderr , but this practice is nonportable.
+
 Standard I/O is a set of three streams that model input and output to a program.
 
 those are file descriptors that reference input, output and second channel of output called error.
