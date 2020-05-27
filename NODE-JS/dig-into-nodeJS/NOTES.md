@@ -42,3 +42,10 @@ JavaScript is agnostic to I/O. And this one of the reasons JS to be so successfu
 In the browser is not a POSEX environment, because I am not dealing with processes, and process IDs, simply need to console.log and it is running in the browser, the browser choose to expose it in a different way, It's just a direct connection over the dev tools.
 And that is a difference based on the hosting environment exposing the I/O. 
 
+### standard in / standard out difference
+
+If standard out is my output stream, where I am pushing from my program back out to the shell. Standard in is the stream of any contents that are currently in the buffer of my shell that are going to go into the next program. 
+When I do a pipe command in terminal (cat files/hello.txt), what I am saying is anything that this created as a standard output, it would normally just be dumped to the shell. 
+But if I pipe it that is saying turn the output into an input stream. Basically I am saying : take that input stream and pipe it directly into this program.
+
+create a package.json file in my project in project folder terminal : npm init 
