@@ -9,6 +9,7 @@
   "author": "Irena Popova",
   "license": "ISC",
   "dependencies": {
-    "get-stdin": "^8.0.0"
+    "get-stdin": "^8.0.0",
+    "sqlite3": "^4.2.0"
   }
 }

@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 
 "use strict";
-
+// how to store data in and how to pull data out 
 var util = require("util");
 var path = require("path");
 var fs = require("fs");
-#var sqlite3 = require("sqlite3");
-// require(console.table);
 
+// sqlite3 is sort of a strip down environment where the file is maintained directly by my application, the sqlite3 module literally modifies the file directly. 
+var sqlite3 = require("sqlite3");
+// require(console.table);
+// web browsers have sqlite built into them, and literally use them for their data storage, 
 // ********************************************** 
 
-const DB_PATH = path.join(__dirnamw, "my.db");
-const DB_SQL_PATH = path.join(__dirname, "mydb.sql");
+const DB_PATH = path.join(__dirnamw, "my.db"); //"my.db"- where I store my database
+const DB_SQL_PATH = path.join(__dirname, "mydb.sql"); // "mydb.sql" -where I store my schema for my database, 
 
 var args = require("minimist")(process.argv.slice(2), {
   string: ["other",],
