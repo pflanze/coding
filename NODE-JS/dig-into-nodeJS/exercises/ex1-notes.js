@@ -153,3 +153,18 @@ var args = require("minimist")(process.argv.slice(2), {
 // Asynchronous readFile
 // in node everything that is not part of the start-up should be asynchronous
 // Asynchronous form of readFile expects a callback. It is not going to give mycontents just like that. 
+
+// callbacks are a way of passing a bundle of information along to a different part of my program, they are functions that some other portions of my code can run. As if handing a remote control to someone else.
+
+// Promises are a way of saying , do this thing and when it is done, do one of two things-resolve or reject, Promises allow to be more declarative,
+
+// the driver inspects whether a callback is passed. If no callback is passed, the driver will return a promise automatically. 
+
+// async / await - is another way to handle promises, .which result in clean code so to use async/await, I have to mark my function as async. and this lets me to use await key word for promises. Behind the scenes, it is attaching the .then part to a promise, and returning that value. The catch part is handled by a catch block, 
+//! Important to remember is to always surround await statements with a try/catch block. 
+
+//! I can nest multiple awaits within a single try
+
+// Mongo DB treats arrays as first class Objects. 
+
+//Compass is Mongo DB GUI and also supports the Mongo DB query language, and enables to read and write data, using a number of conveniences for building queries. 
