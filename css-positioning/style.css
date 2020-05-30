@@ -1,0 +1,31 @@
+.box{
+  width: 200px;
+  height: 100px;
+  background-color: #ccc;
+  border: 2px solid #555;
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 10px;
+}
+
+.box1{
+  position: static;
+}
+
+.box2{
+  position: relative;
+  top: 20px;
+  left: 100px;
+}
+
+.box3{
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.box4{
+  position: fixed;
+  left: 300px;
+  top: 10px;
+}
