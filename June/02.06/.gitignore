@@ -1,0 +1,4 @@
+node_modules/
+
+/* to hide apis */
+config.js

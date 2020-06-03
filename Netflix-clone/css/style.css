@@ -107,3 +107,40 @@ nav .signin:hover,
   height: 125px;
   line-height: 20px;
 }
+
+#features>nav a.is-selected {
+  border-bottom: 5px solid #e50914;
+  color: white;
+}
+
+#features>nav a.is-selected img {
+  opacity: 1;
+}
+
+#features>nav a:hover {
+  color: white;
+}
+
+#features>nav a:hover img {
+  opacity: 1;
+}
+
+#features>nav a img {
+  height: 49px;
+  opacity: 0.5;
+}
+
+#features>nav a h2 {
+  margin: 10px 0 0;
+  font-size: 1em;
+}
+
+#features #watchanywhere h2 {
+  font-size: 19px;
+  padding-right: 1em;
+  margin: 0 0 20px;
+}
+
+#feachers #watchanywhere>div:first-child {
+  margin-bottom: 60px;
+}
