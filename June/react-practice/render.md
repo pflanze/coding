@@ -2,6 +2,7 @@
 
 curly braces { } are special syntax in JSX. It is used to evaluate a JavaScript expression during compilation. A JavaScript expression can be a variable, function, an object, or any code that resolves into a value.
 
+
 ```javascript
 const yellowStyle={color: 'yellow'} 
 <Star style={yellowStyle} />
@@ -27,6 +28,8 @@ are doing string interpolation I love ${snack.name}
 parenthesis are used to group multiline of codes on JavaScript return statement so to prevent semicolon inserted automatically in the wrong place
 ```
 
+
+#### Parenthesis are used to group multiline of codes on JavaScript return statement so to prevent semicolon inserted automatically in the wrong place.
 
 it is not necessary to add a semicolon in JavaScript, JavaScript engine automatically inserts a semicolon at the first possible opportunity on a line after a return statement. If the JavaScript engine places the semicolon where it should not be, your code won’t compile.
 
@@ -54,4 +57,17 @@ class StarsComponent {
   }
 }
 
+```
+
+Parenthesis are used in an arrow function to return an object.
+
+```javascript
+() => ({ name: 'Irena' })  // Shorthand to return an object
+```
+
+That is equivalent to
+```javascript
+() => {
+   return { name : 'Irena' }
+}
 ```

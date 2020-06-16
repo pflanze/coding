@@ -3,6 +3,7 @@ The heart of every React component is its “state”, an object that determines
 If props hold immutable data and are rendered by components, then state stores data about the component that can change over time. Change could come in the form of user events or system events such as response to user input or server requests. Working with a state’s component normally involves setting a component’s default state, accessing the current state and updating the state. 
 The first thing we must do is to initialize our state data before we can use it in render(). To set the initial state, we use this.state in the constructor with our React.Component syntax. If you’re getting logic from a parent component, be sure to call the super() method with props:
 
+```javascript
 class Counter extends React.Component {
     constructor(props) {
       super(props)
@@ -13,12 +14,12 @@ class Counter extends React.Component {
     }
   }
 
-
+```
 
 A state in React Component is its own local state, the state cannot be accessed and modified outside the component and can only be used inside the component which is very similar to, you already guessed it a function own local scope. We can define variables inside the function which can only be used inside the function block scope. Let’s demonstrate this with an example.
 
 
-
+```javascript
 class DummyComponent extends React.Component {
   state = {
     name: 'Manoj'
@@ -33,6 +34,7 @@ const DummyFunction = () => {
   console.log(`Hey ${name}`)
 }
 
+```
 State is referred to the local state of the component which cannot be accessed and modified outside of the component and only can be used & modified inside the component. Props, on the other hand,make components reusable by giving components the ability to receive data from the parent component in the form of props.
 
 
@@ -46,6 +48,7 @@ reference props { this.props.name }
 setState this.setState({ number : "james" })
 are doing string interpolation I love ${snack.name}
 
+```javascript
 class Toggle extends React.Component {
 state = {
   toggleOn: true
@@ -72,7 +75,8 @@ state = {
     );
   }
 }
- here is a great resource to learn more about JSX and its curly braces
+```
+
 
 #### 3 instances where you don't need a curly brace:
 
@@ -83,7 +87,9 @@ around the prop key <Component propKey = {this.prop.thing} />
 creating an id or className <div id="hello">
 
  Use curly braces where you:
+
 ```javascript
+
 render your JSX element render() { return goes here }
 initialize state state = { name: "irena" }
 reference props { this.props.name }
