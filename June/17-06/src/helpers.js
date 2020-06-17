@@ -1,0 +1,1 @@
+// here you will add function that want to use throw out my app, remember to export 😎
