@@ -1,12 +1,13 @@
 {
   "name": "todo-list",
   "version": "0.1.0",
-  "homepage": "https://github.com/irenapopova/TODO-List-react",
+  "homepage": "https://irenapopova.github.io/TODO-List-react/",
   "private": true,
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "^3.4.1",
+    "server-js": "^0.1.4",
     "uuid": "^3.4.0"
   },
   "scripts": {
