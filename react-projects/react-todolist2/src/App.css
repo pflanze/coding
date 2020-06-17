@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courgette", cursive;
+  line-height: 1.4;
+  background: linear-gradient(to right, #e8ffe6, #e4e9e0);
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.container {
+  width: 40%;
+  margin: 5vh auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+}
+.searchBar {
+  outline: none;
+  border: 0.6rem solid #333;
+  font-family: "Courgette", cursive;
+}
+
+.btn {
+  display: inline-block;
+  font-family: "Courgette", cursive;
+  border: 0.5rem solid #333;
+  padding: 0.4rem 3rem;
+  outline: none;
+  color: #fff;
+  background: #0dd463;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #11d445;
+}
+
+@media (max-width: 800px) {
+  .btn {
+    padding: 0.4rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+}
