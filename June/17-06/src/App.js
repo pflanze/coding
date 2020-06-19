@@ -18,6 +18,9 @@ export default class App extends Component {
       });
     };
     this.validate = (email) => {
+      debugger
+      // {1,6} means that the pattern to the left is matched from 1 to six matches
+      //  / - forward slash tells  javascript that regular expression begins
       const regex = /^[A-Za-z\.\-\_]+@\w+\.[A-Za-z]{1,6}$/;
       return regex.test(email);
     };
