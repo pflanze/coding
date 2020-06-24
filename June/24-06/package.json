@@ -1,0 +1,22 @@
+{
+  "name": "24-06",
+  "version": "1.0.0",
+  "description": "react app",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Irena",
+  "license": "ISC"
+}
