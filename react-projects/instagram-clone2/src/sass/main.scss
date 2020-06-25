@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+// 1. Base stuff
+@import "base/base";
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250,250,250);
+  height: 105vh;
+}
+.main{
+  margin-top: 5vh;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  div{
+    margin-left: auto;
+    width: 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  img{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.icon {
+  font-size: 2.3rem;
+  color: #282828;
+  cursor: pointer;
+}
+
+
