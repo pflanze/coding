@@ -5,9 +5,9 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Welcome to our online store</h1>
+        <h1>Welcome to Mix store</h1>
         <div className='products-wrapper'><ProductList data={Data} /></div>
-        
+
       </React.Fragment>
     );
   }
