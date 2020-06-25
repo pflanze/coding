@@ -4,4 +4,4 @@
 
 ### DEMO 
 
-[ Online Shop Demo](https://w)
+[ Online Shop Demo](http://online-mix-shop.surge.sh/)
