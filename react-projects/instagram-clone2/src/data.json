@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "race": "bags",
+    "likes": "299.9k",
+    "comments": "13k",
+    "url": "./img/"
+  },
+  {
+    "id": 2,
+    "race": "bags",
+    "likes": "200.9k",
+    "comments": "11.2k",
+    "url": "./img/"
+  },
+  {
+    "id": 3,
+    "race": "bags",
+    "likes": "309.9k",
+    "comments": "5k",
+    "url": "./img/"
+  },
+  {
+    "id": 4,
+    "race": "bags",
+    "likes": "209.9k",
+    "comments": "12k",
+    "url": "./img/"
+  },
+  {
+    "id": 5,
+    "race": "bags",
+    "likes": "125.9k",
+    "comments": "12k",
+    "url": "./img/"
+  },
+  {
+    "id": 6,
+    "race": "bags",
+    "likes": "175.9k",
+    "comments": "5.3k",
+    "url": "./img/"
+  },
+  {
+    "id": 7,
+    "race": "bags",
+    "likes": "275.9k",
+    "comments": "7k",
+    "url": "./img/"
+  },
+  {
+    "id": 8,
+    "race": "bags",
+    "likes": "205.9k",
+    "comments": "15.2k",
+    "url": "./img/"
+  },
+  {
+    "id": 9,
+    "race": "bags",
+    "likes": "2.9m",
+    "comments": "214k",
+    "url": "./img/"
+  },
+  {
+    "id": 10,
+    "race": "bags",
+    "likes": "86.9k",
+    "comments": "21k",
+    "url": "./img/"
+  },
+  {
+    "id": 11,
+    "race": "bags",
+    "likes": "869.9k",
+    "comments": "5k",
+    "url": "./img/"
+  },
+  {
+    "id": 12,
+    "race": "accessoires",
+    "likes": "6.9m",
+    "comments": "2.7k",
+    "url": "./img/"
+  }
+]

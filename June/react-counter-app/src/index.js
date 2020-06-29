@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.js';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import 'bootstrap/dist/css/bootstrap.css';
 
-class Counter extends Component {
-  state = {}
-  render() {
-    return ()
-  }
-
-}
-
-export default Counter;
+ReactDOM.render(App />, document.getElementById('root'));
+registerServiceWorker();

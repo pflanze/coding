@@ -1,13 +1,7 @@
 .search {
   position: relative;
   color: rgb(142, 142, 142);
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  span {
-    transform: translateX(+2rem);
-    z-index: 3;
-  }
+  font-size: 14px;
 }
 
 .search input {
@@ -15,11 +9,15 @@
   width: 20rem;
   height: 28px;
   background: #fcfcfc;
-  border: 1px solid rgba(142, 142, 142, 0.1);
+  border: 1px solid rgba(142, 142, 142, 0.5);
   border-radius: 3px;
 }
 
 .search input {
-  text-indent: 1.5rem;
+  text-indent: 25px;
 }
-
+.search .fa-search {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
