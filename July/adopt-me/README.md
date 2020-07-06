@@ -1,3 +1,7 @@
-### React APP 
+### React APP - Adopt me
 
-#### practice react and react hooks exercise
+### Tech used
+
+- react hooks
+
+#### practice react and react Hooks exercise
